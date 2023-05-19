@@ -1,3 +1,6 @@
+import 'package:meta/meta.dart';
+
+@internal
 class ApiPath {
   const ApiPath._();
 

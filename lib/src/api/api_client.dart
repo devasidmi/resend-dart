@@ -1,10 +1,12 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:meta/meta.dart';
 import 'package:resend_dart/src/api/models/retrieve_email_response.dart';
 import 'package:resend_dart/src/api/models/send_email_response.dart';
 import 'package:resend_dart/src/api/paths.dart';
 
+@internal
 class ApiClient {
   final String _baseUrl = 'https://api.resend.com';
 
