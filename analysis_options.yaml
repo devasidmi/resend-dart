@@ -1,0 +1,15 @@
+include: package:very_good_analysis/analysis_options.yaml
+analyzer:
+  exclude:
+    - lib/src/**/*.freezed.dart
+    - lib/src/**/*.g.dart
+  errors:
+    invalid_annotation_target: ignore
+linter:
+  rules:
+    public_member_api_docs: false
+    sort_pub_dependencies: false
+    prefer_relative_imports: false
+    sort_constructors_first: false
+    lines_longer_than_80_chars: false
+    use_setters_to_change_properties: false
