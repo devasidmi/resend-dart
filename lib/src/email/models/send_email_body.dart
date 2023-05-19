@@ -5,6 +5,7 @@ import 'package:resend_dart/src/email/models/tag.dart';
 part 'send_email_body.freezed.dart';
 part 'send_email_body.g.dart';
 
+@internal
 @freezed
 class SendEmailBody with _$SendEmailBody {
   const factory SendEmailBody({

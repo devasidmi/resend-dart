@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'resend_error.freezed.dart';
 part 'resend_error.g.dart';
 
+@internal
 @freezed
 class ResendError with _$ResendError {
   const factory ResendError({

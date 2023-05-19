@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'api_key.freezed.dart';
 part 'api_key.g.dart';
 
+@internal
 @freezed
 class ApiKey with _$ApiKey {
   const factory ApiKey({

@@ -4,6 +4,7 @@ import 'package:resend_dart/src/api/models/api_key.dart';
 part 'retrieve_api_key_list_response.freezed.dart';
 part 'retrieve_api_key_list_response.g.dart';
 
+@internal
 @freezed
 class RetrieveApiKeyListResponse with _$RetrieveApiKeyListResponse {
   const factory RetrieveApiKeyListResponse({

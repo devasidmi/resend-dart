@@ -1,3 +1,4 @@
+import 'package:meta/meta.dart';
 import 'package:resend_dart/src/api/api_client.dart';
 import 'package:resend_dart/src/api/models/retrieve_email_response.dart';
 import 'package:resend_dart/src/api/models/send_email_response.dart';
@@ -5,6 +6,7 @@ import 'package:resend_dart/src/email/models/attachment.dart';
 import 'package:resend_dart/src/email/models/send_email_body.dart';
 import 'package:resend_dart/src/email/models/tag.dart';
 
+@internal
 class Email {
   final ApiClient _apiClient;
 

@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'attachment.freezed.dart';
 part 'attachment.g.dart';
 
+@internal
 @freezed
 class Attachment with _$Attachment {
   const factory Attachment({
