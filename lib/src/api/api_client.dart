@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
+import 'package:resend_dart/src/api/api_path.dart';
 import 'package:resend_dart/src/api/models/retrieve_email_response.dart';
 import 'package:resend_dart/src/api/models/send_email_response.dart';
-import 'package:resend_dart/src/api/paths.dart';
 import 'package:resend_dart/src/email/models/send_email_body.dart';
 
 @internal

@@ -1,21 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'retrieve_api_key_list_response.dart';
+part of 'api_keys_list_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_RetrieveApiKeyListResponse _$$_RetrieveApiKeyListResponseFromJson(
-        Map json) =>
-    _$_RetrieveApiKeyListResponse(
+_$_ApiKeysListResponse _$$_ApiKeysListResponseFromJson(Map json) =>
+    _$_ApiKeysListResponse(
       data: (json['data'] as List<dynamic>)
-          .map((e) => ApiKey.fromJson(Map<String, dynamic>.from(e as Map)))
+          .map((e) => ApiKey.fromJson(Map<String, Object?>.from(e as Map)))
           .toList(),
     );
 
-Map<String, dynamic> _$$_RetrieveApiKeyListResponseToJson(
-        _$_RetrieveApiKeyListResponse instance) =>
+Map<String, dynamic> _$$_ApiKeysListResponseToJson(
+        _$_ApiKeysListResponse instance) =>
     <String, dynamic>{
       'data': instance.data,
     };

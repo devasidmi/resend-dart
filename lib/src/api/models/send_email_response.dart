@@ -10,6 +10,6 @@ class SendEmailResponse with _$SendEmailResponse {
     @JsonKey(name: 'id') required String id,
   }) = _SendEmailResponse;
 
-  factory SendEmailResponse.fromJson(Map<String, dynamic> json) =>
+  factory SendEmailResponse.fromJson(Map<String, Object?> json) =>
       _$SendEmailResponseFromJson(json);
 }

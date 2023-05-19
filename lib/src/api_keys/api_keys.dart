@@ -1,5 +1,5 @@
 import 'package:meta/meta.dart';
-import 'package:resend_dart/src/api/models/retrieve_api_key_list_response.dart';
+import 'package:resend_dart/src/api/models/api_keys_list_response.dart';
 
 @internal
 class ApiKeys {
@@ -9,12 +9,12 @@ class ApiKeys {
   Future<void> create() async {}
 
   /// Retrieve a list of API keys for the authenticated user
-  Future<RetrieveApiKeyListResponse> retrieve() async {
-    return const RetrieveApiKeyListResponse(
+  Future<ApiKeysListResponse> get() async {
+    return const ApiKeysListResponse(
       data: [],
     );
   }
 
   /// Remove an existing API key
-  Future<void> remove(String apiKeyId) async {}
+  Future<void> delete({required String apiKeyId}) async {}
 }

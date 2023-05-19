@@ -12,6 +12,6 @@ class ResendError with _$ResendError {
     @JsonKey(name: 'statusCode') required int statusCode,
   }) = _ResendError;
 
-  factory ResendError.fromJson(Map<String, dynamic> json) =>
+  factory ResendError.fromJson(Map<String, Object?> json) =>
       _$ResendErrorFromJson(json);
 }

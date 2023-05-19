@@ -18,5 +18,5 @@ class Tag with _$Tag {
     String? value,
   }) = _Tag;
 
-  factory Tag.fromJson(Map<String, dynamic> json) => _$TagFromJson(json);
+  factory Tag.fromJson(Map<String, Object?> json) => _$TagFromJson(json);
 }

@@ -8,6 +8,6 @@ part 'retrieve_email_response.g.dart';
 class RetrieveEmailResponse with _$RetrieveEmailResponse {
   const factory RetrieveEmailResponse() = _RetrieveEmailResponse;
 
-  factory RetrieveEmailResponse.fromJson(Map<String, dynamic> json) =>
+  factory RetrieveEmailResponse.fromJson(Map<String, Object?> json) =>
       _$RetrieveEmailResponseFromJson(json);
 }

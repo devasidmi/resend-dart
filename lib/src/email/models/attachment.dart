@@ -14,6 +14,6 @@ class Attachment with _$Attachment {
     String? filename,
   }) = _Attachment;
 
-  factory Attachment.fromJson(Map<String, dynamic> json) =>
+  factory Attachment.fromJson(Map<String, Object?> json) =>
       _$AttachmentFromJson(json);
 }

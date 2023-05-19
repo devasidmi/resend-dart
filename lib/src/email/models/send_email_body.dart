@@ -41,6 +41,6 @@ class SendEmailBody with _$SendEmailBody {
     List<Tag>? tags,
   }) = _SendEmailBody;
 
-  factory SendEmailBody.fromJson(Map<String, dynamic> json) =>
+  factory SendEmailBody.fromJson(Map<String, Object?> json) =>
       _$SendEmailBodyFromJson(json);
 }
