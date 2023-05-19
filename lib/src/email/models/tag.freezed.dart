@@ -14,6 +14,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+Tag _$TagFromJson(Map<String, dynamic> json) {
+  return _Tag.fromJson(json);
+}
+
 /// @nodoc
 mixin _$Tag {
   /// The name of the email tag
@@ -26,6 +30,7 @@ mixin _$Tag {
   /// It can contain no more than 256 characters
   String? get value => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TagCopyWith<Tag> get copyWith => throw _privateConstructorUsedError;
 }
@@ -101,9 +106,11 @@ class __$$_TagCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$_Tag>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_Tag implements _Tag {
   const _$_Tag({required this.name, this.value});
+
+  factory _$_Tag.fromJson(Map<String, dynamic> json) => _$$_TagFromJson(json);
 
   /// The name of the email tag
   /// It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-)
@@ -131,6 +138,7 @@ class _$_Tag implements _Tag {
             (identical(other.value, value) || other.value == value));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, name, value);
 
@@ -139,11 +147,20 @@ class _$_Tag implements _Tag {
   @pragma('vm:prefer-inline')
   _$$_TagCopyWith<_$_Tag> get copyWith =>
       __$$_TagCopyWithImpl<_$_Tag>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_TagToJson(
+      this,
+    );
+  }
 }
 
 abstract class _Tag implements Tag {
   const factory _Tag({required final String name, final String? value}) =
       _$_Tag;
+
+  factory _Tag.fromJson(Map<String, dynamic> json) = _$_Tag.fromJson;
 
   @override
 

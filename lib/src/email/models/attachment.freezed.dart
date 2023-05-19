@@ -14,14 +14,19 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+Attachment _$AttachmentFromJson(Map<String, dynamic> json) {
+  return _Attachment.fromJson(json);
+}
+
 /// @nodoc
 mixin _$Attachment {
   /// Content of an attached file
-  Uint8List get content => throw _privateConstructorUsedError;
+  List<int> get content => throw _privateConstructorUsedError;
 
   /// Name of attached file
   String? get filename => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AttachmentCopyWith<Attachment> get copyWith =>
       throw _privateConstructorUsedError;
@@ -33,7 +38,7 @@ abstract class $AttachmentCopyWith<$Res> {
           Attachment value, $Res Function(Attachment) then) =
       _$AttachmentCopyWithImpl<$Res, Attachment>;
   @useResult
-  $Res call({Uint8List content, String? filename});
+  $Res call({List<int> content, String? filename});
 }
 
 /// @nodoc
@@ -56,7 +61,7 @@ class _$AttachmentCopyWithImpl<$Res, $Val extends Attachment>
       content: null == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
-              as Uint8List,
+              as List<int>,
       filename: freezed == filename
           ? _value.filename
           : filename // ignore: cast_nullable_to_non_nullable
@@ -73,7 +78,7 @@ abstract class _$$_AttachmentCopyWith<$Res>
       __$$_AttachmentCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Uint8List content, String? filename});
+  $Res call({List<int> content, String? filename});
 }
 
 /// @nodoc
@@ -92,9 +97,9 @@ class __$$_AttachmentCopyWithImpl<$Res>
   }) {
     return _then(_$_Attachment(
       content: null == content
-          ? _value.content
+          ? _value._content
           : content // ignore: cast_nullable_to_non_nullable
-              as Uint8List,
+              as List<int>,
       filename: freezed == filename
           ? _value.filename
           : filename // ignore: cast_nullable_to_non_nullable
@@ -104,13 +109,24 @@ class __$$_AttachmentCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_Attachment implements _Attachment {
-  const _$_Attachment({required this.content, this.filename});
+  const _$_Attachment({required final List<int> content, this.filename})
+      : _content = content;
+
+  factory _$_Attachment.fromJson(Map<String, dynamic> json) =>
+      _$$_AttachmentFromJson(json);
+
+  /// Content of an attached file
+  final List<int> _content;
 
   /// Content of an attached file
   @override
-  final Uint8List content;
+  List<int> get content {
+    if (_content is EqualUnmodifiableListView) return _content;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_content);
+  }
 
   /// Name of attached file
   @override
@@ -126,31 +142,42 @@ class _$_Attachment implements _Attachment {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Attachment &&
-            const DeepCollectionEquality().equals(other.content, content) &&
+            const DeepCollectionEquality().equals(other._content, _content) &&
             (identical(other.filename, filename) ||
                 other.filename == filename));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(content), filename);
+      runtimeType, const DeepCollectionEquality().hash(_content), filename);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$_AttachmentCopyWith<_$_Attachment> get copyWith =>
       __$$_AttachmentCopyWithImpl<_$_Attachment>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_AttachmentToJson(
+      this,
+    );
+  }
 }
 
 abstract class _Attachment implements Attachment {
   const factory _Attachment(
-      {required final Uint8List content,
+      {required final List<int> content,
       final String? filename}) = _$_Attachment;
+
+  factory _Attachment.fromJson(Map<String, dynamic> json) =
+      _$_Attachment.fromJson;
 
   @override
 
   /// Content of an attached file
-  Uint8List get content;
+  List<int> get content;
   @override
 
   /// Name of attached file

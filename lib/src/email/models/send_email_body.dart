@@ -1,16 +1,13 @@
-import 'package:resend_dart/src/api/api_client.dart';
-import 'package:resend_dart/src/api/models/retrieve_email_response.dart';
-import 'package:resend_dart/src/api/models/send_email_response.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:resend_dart/src/email/models/attachment.dart';
-import 'package:resend_dart/src/email/models/send_email_body.dart';
 import 'package:resend_dart/src/email/models/tag.dart';
 
-class Email {
-  final ApiClient _apiClient;
+part 'send_email_body.freezed.dart';
+part 'send_email_body.g.dart';
 
-  const Email(this._apiClient);
-
-  Future<SendEmailResponse> send({
+@freezed
+class SendEmailBody with _$SendEmailBody {
+  const factory SendEmailBody({
     /// Sender email address
     /// To include a friendly name, use the format "Your Name <sender@domain.com>"
     required String from,
@@ -41,25 +38,8 @@ class Email {
 
     /// Email tags
     List<Tag>? tags,
-  }) async {
-    final body = SendEmailBody(
-      from: from,
-      to: to,
-      subject: subject,
-      attachments: attachments,
-      bcc: bcc,
-      cc: cc,
-      html: html,
-      replyTo: replyTo,
-      tags: tags,
-      text: text,
-    );
-    final result = await _apiClient.sendEmail(body);
-    return result;
-  }
+  }) = _SendEmailBody;
 
-  Future<RetrieveEmailResponse> retrieve({required String id}) async {
-    final result = await _apiClient.retrieveEmail(id: id);
-    return result;
-  }
+  factory SendEmailBody.fromJson(Map<String, dynamic> json) =>
+      _$SendEmailBodyFromJson(json);
 }

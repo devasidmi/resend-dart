@@ -1,39 +1,32 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Resend Dart SDK
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+---
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+## Installation
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+To install Resend Dart SDK, simply execute the following command in a terminal:
 
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```
+flutter pub add resend_dart
 ```
 
-## Additional information
+## Setup
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+First, you need to get an API key, which is available in the [Resend Dashboard](https://resend.com).
+
+## Example
+
+```dart
+import 'package:resend_dart/resend.dart';
+
+final apiKey = `API_KEY`
+final resend = Resend(apiKey: apiKey);
+
+resend.email.send(
+    from: 'r@email.io',
+    to: ['to@gmail.com'],
+    subject: 'Test subject',
+  );
+```

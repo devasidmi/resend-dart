@@ -22,12 +22,6 @@ SendEmailResponse _$SendEmailResponseFromJson(Map<String, dynamic> json) {
 mixin _$SendEmailResponse {
   @JsonKey(name: 'id')
   String get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'from')
-  String get from => throw _privateConstructorUsedError;
-  @JsonKey(name: 'to')
-  List<String> get to => throw _privateConstructorUsedError;
-  @JsonKey(name: 'created_at')
-  DateTime get createdAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,11 +35,7 @@ abstract class $SendEmailResponseCopyWith<$Res> {
           SendEmailResponse value, $Res Function(SendEmailResponse) then) =
       _$SendEmailResponseCopyWithImpl<$Res, SendEmailResponse>;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'id') String id,
-      @JsonKey(name: 'from') String from,
-      @JsonKey(name: 'to') List<String> to,
-      @JsonKey(name: 'created_at') DateTime createdAt});
+  $Res call({@JsonKey(name: 'id') String id});
 }
 
 /// @nodoc
@@ -62,27 +52,12 @@ class _$SendEmailResponseCopyWithImpl<$Res, $Val extends SendEmailResponse>
   @override
   $Res call({
     Object? id = null,
-    Object? from = null,
-    Object? to = null,
-    Object? createdAt = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      from: null == from
-          ? _value.from
-          : from // ignore: cast_nullable_to_non_nullable
-              as String,
-      to: null == to
-          ? _value.to
-          : to // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
     ) as $Val);
   }
 }
@@ -95,11 +70,7 @@ abstract class _$$_SendEmailResponseCopyWith<$Res>
       __$$_SendEmailResponseCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'id') String id,
-      @JsonKey(name: 'from') String from,
-      @JsonKey(name: 'to') List<String> to,
-      @JsonKey(name: 'created_at') DateTime createdAt});
+  $Res call({@JsonKey(name: 'id') String id});
 }
 
 /// @nodoc
@@ -114,27 +85,12 @@ class __$$_SendEmailResponseCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? from = null,
-    Object? to = null,
-    Object? createdAt = null,
   }) {
     return _then(_$_SendEmailResponse(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      from: null == from
-          ? _value.from
-          : from // ignore: cast_nullable_to_non_nullable
-              as String,
-      to: null == to
-          ? _value._to
-          : to // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
     ));
   }
 }
@@ -142,12 +98,7 @@ class __$$_SendEmailResponseCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_SendEmailResponse implements _SendEmailResponse {
-  const _$_SendEmailResponse(
-      {@JsonKey(name: 'id') required this.id,
-      @JsonKey(name: 'from') required this.from,
-      @JsonKey(name: 'to') required final List<String> to,
-      @JsonKey(name: 'created_at') required this.createdAt})
-      : _to = to;
+  const _$_SendEmailResponse({@JsonKey(name: 'id') required this.id});
 
   factory _$_SendEmailResponse.fromJson(Map<String, dynamic> json) =>
       _$$_SendEmailResponseFromJson(json);
@@ -155,25 +106,10 @@ class _$_SendEmailResponse implements _SendEmailResponse {
   @override
   @JsonKey(name: 'id')
   final String id;
-  @override
-  @JsonKey(name: 'from')
-  final String from;
-  final List<String> _to;
-  @override
-  @JsonKey(name: 'to')
-  List<String> get to {
-    if (_to is EqualUnmodifiableListView) return _to;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_to);
-  }
-
-  @override
-  @JsonKey(name: 'created_at')
-  final DateTime createdAt;
 
   @override
   String toString() {
-    return 'SendEmailResponse(id: $id, from: $from, to: $to, createdAt: $createdAt)';
+    return 'SendEmailResponse(id: $id)';
   }
 
   @override
@@ -181,17 +117,12 @@ class _$_SendEmailResponse implements _SendEmailResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SendEmailResponse &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.from, from) || other.from == from) &&
-            const DeepCollectionEquality().equals(other._to, _to) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt));
+            (identical(other.id, id) || other.id == id));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, from,
-      const DeepCollectionEquality().hash(_to), createdAt);
+  int get hashCode => Object.hash(runtimeType, id);
 
   @JsonKey(ignore: true)
   @override
@@ -210,11 +141,7 @@ class _$_SendEmailResponse implements _SendEmailResponse {
 
 abstract class _SendEmailResponse implements SendEmailResponse {
   const factory _SendEmailResponse(
-          {@JsonKey(name: 'id') required final String id,
-          @JsonKey(name: 'from') required final String from,
-          @JsonKey(name: 'to') required final List<String> to,
-          @JsonKey(name: 'created_at') required final DateTime createdAt}) =
-      _$_SendEmailResponse;
+      {@JsonKey(name: 'id') required final String id}) = _$_SendEmailResponse;
 
   factory _SendEmailResponse.fromJson(Map<String, dynamic> json) =
       _$_SendEmailResponse.fromJson;
@@ -222,15 +149,6 @@ abstract class _SendEmailResponse implements SendEmailResponse {
   @override
   @JsonKey(name: 'id')
   String get id;
-  @override
-  @JsonKey(name: 'from')
-  String get from;
-  @override
-  @JsonKey(name: 'to')
-  List<String> get to;
-  @override
-  @JsonKey(name: 'created_at')
-  DateTime get createdAt;
   @override
   @JsonKey(ignore: true)
   _$$_SendEmailResponseCopyWith<_$_SendEmailResponse> get copyWith =>
