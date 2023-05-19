@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:resend_dart/src/api/models/api_key.dart';
+import 'package:resend_dart/src/models/api_key.dart';
 
 part 'api_keys_list_response.freezed.dart';
 part 'api_keys_list_response.g.dart';
@@ -8,9 +8,9 @@ part 'api_keys_list_response.g.dart';
 @freezed
 class ApiKeysListResponse with _$ApiKeysListResponse {
   const factory ApiKeysListResponse({
-    @JsonKey(name: 'data') required List<ApiKey> data,
+    @JsonKey(name: 'data') required List<ApiKey> keys,
   }) = _ApiKeysListResponse;
 
-  factory ApiKeysListResponse.fromJson(Map<String, Object?> json) =>
+  factory ApiKeysListResponse.fromJson(Map<String, dynamic> json) =>
       _$ApiKeysListResponseFromJson(json);
 }

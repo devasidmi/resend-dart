@@ -3,7 +3,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'api_key.freezed.dart';
 part 'api_key.g.dart';
 
-@internal
 @freezed
 class ApiKey with _$ApiKey {
   const factory ApiKey({
@@ -12,5 +11,5 @@ class ApiKey with _$ApiKey {
     @JsonKey(name: 'created_at') required DateTime createdAt,
   }) = _ApiKey;
 
-  factory ApiKey.fromJson(Map<String, Object?> json) => _$ApiKeyFromJson(json);
+  factory ApiKey.fromJson(Map<String, dynamic> json) => _$ApiKeyFromJson(json);
 }

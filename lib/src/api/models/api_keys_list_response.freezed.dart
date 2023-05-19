@@ -21,7 +21,7 @@ ApiKeysListResponse _$ApiKeysListResponseFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ApiKeysListResponse {
   @JsonKey(name: 'data')
-  List<ApiKey> get data => throw _privateConstructorUsedError;
+  List<ApiKey> get keys => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $ApiKeysListResponseCopyWith<$Res> {
           ApiKeysListResponse value, $Res Function(ApiKeysListResponse) then) =
       _$ApiKeysListResponseCopyWithImpl<$Res, ApiKeysListResponse>;
   @useResult
-  $Res call({@JsonKey(name: 'data') List<ApiKey> data});
+  $Res call({@JsonKey(name: 'data') List<ApiKey> keys});
 }
 
 /// @nodoc
@@ -51,12 +51,12 @@ class _$ApiKeysListResponseCopyWithImpl<$Res, $Val extends ApiKeysListResponse>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = null,
+    Object? keys = null,
   }) {
     return _then(_value.copyWith(
-      data: null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
+      keys: null == keys
+          ? _value.keys
+          : keys // ignore: cast_nullable_to_non_nullable
               as List<ApiKey>,
     ) as $Val);
   }
@@ -70,7 +70,7 @@ abstract class _$$_ApiKeysListResponseCopyWith<$Res>
       __$$_ApiKeysListResponseCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'data') List<ApiKey> data});
+  $Res call({@JsonKey(name: 'data') List<ApiKey> keys});
 }
 
 /// @nodoc
@@ -84,12 +84,12 @@ class __$$_ApiKeysListResponseCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = null,
+    Object? keys = null,
   }) {
     return _then(_$_ApiKeysListResponse(
-      data: null == data
-          ? _value._data
-          : data // ignore: cast_nullable_to_non_nullable
+      keys: null == keys
+          ? _value._keys
+          : keys // ignore: cast_nullable_to_non_nullable
               as List<ApiKey>,
     ));
   }
@@ -99,24 +99,24 @@ class __$$_ApiKeysListResponseCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ApiKeysListResponse implements _ApiKeysListResponse {
   const _$_ApiKeysListResponse(
-      {@JsonKey(name: 'data') required final List<ApiKey> data})
-      : _data = data;
+      {@JsonKey(name: 'data') required final List<ApiKey> keys})
+      : _keys = keys;
 
   factory _$_ApiKeysListResponse.fromJson(Map<String, dynamic> json) =>
       _$$_ApiKeysListResponseFromJson(json);
 
-  final List<ApiKey> _data;
+  final List<ApiKey> _keys;
   @override
   @JsonKey(name: 'data')
-  List<ApiKey> get data {
-    if (_data is EqualUnmodifiableListView) return _data;
+  List<ApiKey> get keys {
+    if (_keys is EqualUnmodifiableListView) return _keys;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
+    return EqualUnmodifiableListView(_keys);
   }
 
   @override
   String toString() {
-    return 'ApiKeysListResponse(data: $data)';
+    return 'ApiKeysListResponse(keys: $keys)';
   }
 
   @override
@@ -124,13 +124,13 @@ class _$_ApiKeysListResponse implements _ApiKeysListResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ApiKeysListResponse &&
-            const DeepCollectionEquality().equals(other._data, _data));
+            const DeepCollectionEquality().equals(other._keys, _keys));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_keys));
 
   @JsonKey(ignore: true)
   @override
@@ -149,7 +149,7 @@ class _$_ApiKeysListResponse implements _ApiKeysListResponse {
 
 abstract class _ApiKeysListResponse implements ApiKeysListResponse {
   const factory _ApiKeysListResponse(
-          {@JsonKey(name: 'data') required final List<ApiKey> data}) =
+          {@JsonKey(name: 'data') required final List<ApiKey> keys}) =
       _$_ApiKeysListResponse;
 
   factory _ApiKeysListResponse.fromJson(Map<String, dynamic> json) =
@@ -157,7 +157,7 @@ abstract class _ApiKeysListResponse implements ApiKeysListResponse {
 
   @override
   @JsonKey(name: 'data')
-  List<ApiKey> get data;
+  List<ApiKey> get keys;
   @override
   @JsonKey(ignore: true)
   _$$_ApiKeysListResponseCopyWith<_$_ApiKeysListResponse> get copyWith =>

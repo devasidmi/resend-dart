@@ -6,7 +6,7 @@ class Resend {
   late String _apiKey;
   late final _apiClient = ApiClient(apiKey: _apiKey);
   late final email = Email(_apiClient);
-  late final apiKeys = const ApiKeys();
+  late final apiKeys = ApiKeys(_apiClient);
 
   Resend({required String apiKey}) {
     _apiKey = apiKey;

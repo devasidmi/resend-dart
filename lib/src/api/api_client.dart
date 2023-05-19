@@ -3,8 +3,11 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
 import 'package:resend_dart/src/api/api_path.dart';
+import 'package:resend_dart/src/api/models/api_keys_list_response.dart';
+import 'package:resend_dart/src/api/models/create_api_key_response.dart';
 import 'package:resend_dart/src/api/models/retrieve_email_response.dart';
 import 'package:resend_dart/src/api/models/send_email_response.dart';
+import 'package:resend_dart/src/api_keys/models/create_api_key_body.dart';
 import 'package:resend_dart/src/email/models/send_email_body.dart';
 
 @internal
@@ -53,5 +56,52 @@ class ApiClient {
     }
     final json = jsonDecode(response.body) as Map<String, Object?>;
     return RetrieveEmailResponse.fromJson(json);
+  }
+
+  Future<CreateApiKeyResponse> createApiKey(CreateApiKeyBody body) async {
+    final url = Uri.https(
+      _baseUrl,
+      ApiPath.apiKeys,
+    );
+    final response = await http.post(
+      url,
+      body: _toJsonString(body.toJson()),
+      headers: _headers,
+    );
+    if (response.statusCode != 200) {
+      // TODO(vasidmi): handle error
+    }
+    final json = jsonDecode(response.body) as Map<String, Object?>;
+    return CreateApiKeyResponse.fromJson(json);
+  }
+
+  Future<ApiKeysListResponse> getApiKeys() async {
+    final url = Uri.https(
+      _baseUrl,
+      ApiPath.apiKeys,
+    );
+    final response = await http.get(
+      url,
+      headers: _headers,
+    );
+    if (response.statusCode != 200) {
+      // TODO(vasidmi): handle error
+    }
+    final json = jsonDecode(response.body) as Map<String, Object?>;
+    return ApiKeysListResponse.fromJson(json);
+  }
+
+  Future<void> deleteApiKey({required String apiKeyId}) async {
+    final url = Uri.https(
+      _baseUrl,
+      ApiPath.deleteApiKey(id: apiKeyId),
+    );
+    final response = await http.delete(
+      url,
+      headers: _headers,
+    );
+    if (response.statusCode != 200) {
+      // TODO(vasidmi): handle error
+    }
   }
 }
