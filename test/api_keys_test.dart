@@ -19,19 +19,20 @@ void main() {
   test(
     'Create api key, get it from the server and delete',
     () async {
-      final createResponse = await resend.apiKeys.create(
+      final createApiKetResponse = await resend.apiKeys.create(
         name: 'Test key',
         permission: ResendPermission.fullAccess,
       );
-      final createdApiKey = createResponse.id;
-      final keys = (await resend.apiKeys.get()).keys;
-      final keysIds = keys.map((key) => key.id).toSet();
-      expect(keysIds.contains(createdApiKey), isTrue);
+      final createdApiKey = createApiKetResponse.id;
+      final createdApiKeys = (await resend.apiKeys.get()).keys;
+      final cratedApiKeysIds = createdApiKeys.map((key) => key.id).toSet();
+      expect(cratedApiKeysIds.contains(createdApiKey), isTrue);
 
       await resend.apiKeys.delete(apiKeyId: createdApiKey);
-      final keysAfterDelete = (await resend.apiKeys.get()).keys;
-      final keysAfterDeleteIds = keysAfterDelete.map((key) => key.id).toSet();
-      expect(keysAfterDeleteIds.contains(createdApiKey), isFalse);
+      final apiKeysAfterDelete = (await resend.apiKeys.get()).keys;
+      final apiKeysIdsAfterDelete =
+          apiKeysAfterDelete.map((key) => key.id).toSet();
+      expect(apiKeysIdsAfterDelete.contains(createdApiKey), isFalse);
     },
   );
 }
