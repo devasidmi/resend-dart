@@ -3,7 +3,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'create_email_response.freezed.dart';
 part 'create_email_response.g.dart';
 
-@internal
 @freezed
 class CreateEmailResponse with _$CreateEmailResponse {
   const factory CreateEmailResponse({
