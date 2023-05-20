@@ -17,6 +17,6 @@ class DomainBody with _$DomainBody {
     DomainRegion region,
   }) = _DomainBody;
 
-  factory DomainBody.fromJson(Map<String, dynamic> json) =>
+  factory DomainBody.fromJson(Map<String, Object?> json) =>
       _$DomainBodyFromJson(json);
 }

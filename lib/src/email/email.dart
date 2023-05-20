@@ -56,12 +56,12 @@ class Email {
       tags: tags,
       text: text,
     );
-    final response = await _apiClient.sendEmail(body);
+    final response = await _apiClient.emails.sendEmail(body);
     return response;
   }
 
   Future<GetEmailResponse> get({required String id}) async {
-    final response = await _apiClient.getEmail(id: id);
+    final response = await _apiClient.emails.getEmail(id: id);
     return response;
   }
 }

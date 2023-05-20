@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:resend_dart/src/models/permission.dart';
+import 'package:resend_dart/src/models/resend_permission.dart';
 
 part 'create_api_key_body.freezed.dart';
 part 'create_api_key_body.g.dart';
@@ -21,6 +21,6 @@ class CreateApiKeyBody with _$CreateApiKeyBody {
     @JsonKey(name: 'domain_id') String? domainId,
   }) = _CreateApiKeyBody;
 
-  factory CreateApiKeyBody.fromJson(Map<String, dynamic> json) =>
+  factory CreateApiKeyBody.fromJson(Map<String, Object?> json) =>
       _$CreateApiKeyBodyFromJson(json);
 }

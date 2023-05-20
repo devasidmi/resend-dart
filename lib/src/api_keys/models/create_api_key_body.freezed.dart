@@ -47,12 +47,10 @@ abstract class $CreateApiKeyBodyCopyWith<$Res> {
       _$CreateApiKeyBodyCopyWithImpl<$Res, CreateApiKeyBody>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'name')
-          String name,
+      {@JsonKey(name: 'name') String name,
       @JsonKey(name: 'permission', unknownEnumValue: ResendPermission.unknown)
-          ResendPermission permission,
-      @JsonKey(name: 'domain_id')
-          String? domainId});
+      ResendPermission permission,
+      @JsonKey(name: 'domain_id') String? domainId});
 }
 
 /// @nodoc
@@ -98,12 +96,10 @@ abstract class _$$_CreateApiKeyBodyCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'name')
-          String name,
+      {@JsonKey(name: 'name') String name,
       @JsonKey(name: 'permission', unknownEnumValue: ResendPermission.unknown)
-          ResendPermission permission,
-      @JsonKey(name: 'domain_id')
-          String? domainId});
+      ResendPermission permission,
+      @JsonKey(name: 'domain_id') String? domainId});
 }
 
 /// @nodoc
@@ -142,12 +138,10 @@ class __$$_CreateApiKeyBodyCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_CreateApiKeyBody implements _CreateApiKeyBody {
   const _$_CreateApiKeyBody(
-      {@JsonKey(name: 'name')
-          required this.name,
+      {@JsonKey(name: 'name') required this.name,
       @JsonKey(name: 'permission', unknownEnumValue: ResendPermission.unknown)
-          required this.permission,
-      @JsonKey(name: 'domain_id')
-          this.domainId});
+      required this.permission,
+      @JsonKey(name: 'domain_id') this.domainId});
 
   factory _$_CreateApiKeyBody.fromJson(Map<String, dynamic> json) =>
       _$$_CreateApiKeyBodyFromJson(json);
@@ -206,12 +200,11 @@ class _$_CreateApiKeyBody implements _CreateApiKeyBody {
 
 abstract class _CreateApiKeyBody implements CreateApiKeyBody {
   const factory _CreateApiKeyBody(
-      {@JsonKey(name: 'name')
-          required final String name,
+      {@JsonKey(name: 'name') required final String name,
       @JsonKey(name: 'permission', unknownEnumValue: ResendPermission.unknown)
-          required final ResendPermission permission,
+      required final ResendPermission permission,
       @JsonKey(name: 'domain_id')
-          final String? domainId}) = _$_CreateApiKeyBody;
+      final String? domainId}) = _$_CreateApiKeyBody;
 
   factory _CreateApiKeyBody.fromJson(Map<String, dynamic> json) =
       _$_CreateApiKeyBody.fromJson;

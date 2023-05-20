@@ -9,7 +9,7 @@ part of 'api_keys_list_response.dart';
 _$_ApiKeysListResponse _$$_ApiKeysListResponseFromJson(Map json) =>
     _$_ApiKeysListResponse(
       keys: (json['data'] as List<dynamic>)
-          .map((e) => ApiKey.fromJson(Map<String, dynamic>.from(e as Map)))
+          .map((e) => ApiKey.fromJson(Map<String, Object?>.from(e as Map)))
           .toList(),
     );
 

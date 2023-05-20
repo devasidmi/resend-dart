@@ -6,6 +6,6 @@ class Domains {
   const Domains(this._apiClient);
 
   Future<void> list() async {
-    await _apiClient.getDomainsList();
+    await _apiClient.domains.getDomainsList();
   }
 }

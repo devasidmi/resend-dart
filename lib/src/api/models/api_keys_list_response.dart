@@ -11,6 +11,6 @@ class ApiKeysListResponse with _$ApiKeysListResponse {
     @JsonKey(name: 'data') required List<ApiKey> keys,
   }) = _ApiKeysListResponse;
 
-  factory ApiKeysListResponse.fromJson(Map<String, dynamic> json) =>
+  factory ApiKeysListResponse.fromJson(Map<String, Object?> json) =>
       _$ApiKeysListResponseFromJson(json);
 }

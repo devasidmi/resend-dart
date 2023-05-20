@@ -38,10 +38,9 @@ abstract class $DomainBodyCopyWith<$Res> {
       _$DomainBodyCopyWithImpl<$Res, DomainBody>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'name')
-          String name,
+      {@JsonKey(name: 'name') String name,
       @JsonKey(name: 'region', unknownEnumValue: DomainRegion.unknown)
-          DomainRegion region});
+      DomainRegion region});
 }
 
 /// @nodoc
@@ -82,10 +81,9 @@ abstract class _$$_DomainBodyCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'name')
-          String name,
+      {@JsonKey(name: 'name') String name,
       @JsonKey(name: 'region', unknownEnumValue: DomainRegion.unknown)
-          DomainRegion region});
+      DomainRegion region});
 }
 
 /// @nodoc
@@ -119,10 +117,9 @@ class __$$_DomainBodyCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_DomainBody implements _DomainBody {
   const _$_DomainBody(
-      {@JsonKey(name: 'name')
-          required this.name,
+      {@JsonKey(name: 'name') required this.name,
       @JsonKey(name: 'region', unknownEnumValue: DomainRegion.unknown)
-          this.region = DomainRegion.usEast1});
+      this.region = DomainRegion.usEast1});
 
   factory _$_DomainBody.fromJson(Map<String, dynamic> json) =>
       _$$_DomainBodyFromJson(json);
@@ -168,10 +165,9 @@ class _$_DomainBody implements _DomainBody {
 
 abstract class _DomainBody implements DomainBody {
   const factory _DomainBody(
-      {@JsonKey(name: 'name')
-          required final String name,
+      {@JsonKey(name: 'name') required final String name,
       @JsonKey(name: 'region', unknownEnumValue: DomainRegion.unknown)
-          final DomainRegion region}) = _$_DomainBody;
+      final DomainRegion region}) = _$_DomainBody;
 
   factory _DomainBody.fromJson(Map<String, dynamic> json) =
       _$_DomainBody.fromJson;
