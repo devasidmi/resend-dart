@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'domain_record_response.dart';
+part of 'domain_record.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-DomainRecordResponse _$DomainRecordResponseFromJson(Map<String, dynamic> json) {
+DomainRecord _$DomainRecordFromJson(Map<String, dynamic> json) {
   return _DomainRecordResponse.fromJson(json);
 }
 
 /// @nodoc
-mixin _$DomainRecordResponse {
+mixin _$DomainRecord {
   @JsonKey(name: 'record', unknownEnumValue: RecordType.unknown)
   RecordType get record => throw _privateConstructorUsedError;
   @JsonKey(name: 'type', unknownEnumValue: DomainRecordType.unknown)
@@ -41,15 +41,15 @@ mixin _$DomainRecordResponse {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DomainRecordResponseCopyWith<DomainRecordResponse> get copyWith =>
+  $DomainRecordCopyWith<DomainRecord> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DomainRecordResponseCopyWith<$Res> {
-  factory $DomainRecordResponseCopyWith(DomainRecordResponse value,
-          $Res Function(DomainRecordResponse) then) =
-      _$DomainRecordResponseCopyWithImpl<$Res, DomainRecordResponse>;
+abstract class $DomainRecordCopyWith<$Res> {
+  factory $DomainRecordCopyWith(
+          DomainRecord value, $Res Function(DomainRecord) then) =
+      _$DomainRecordCopyWithImpl<$Res, DomainRecord>;
   @useResult
   $Res call(
       {@JsonKey(name: 'record', unknownEnumValue: RecordType.unknown)
@@ -68,10 +68,9 @@ abstract class $DomainRecordResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DomainRecordResponseCopyWithImpl<$Res,
-        $Val extends DomainRecordResponse>
-    implements $DomainRecordResponseCopyWith<$Res> {
-  _$DomainRecordResponseCopyWithImpl(this._value, this._then);
+class _$DomainRecordCopyWithImpl<$Res, $Val extends DomainRecord>
+    implements $DomainRecordCopyWith<$Res> {
+  _$DomainRecordCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -134,7 +133,7 @@ class _$DomainRecordResponseCopyWithImpl<$Res,
 
 /// @nodoc
 abstract class _$$_DomainRecordResponseCopyWith<$Res>
-    implements $DomainRecordResponseCopyWith<$Res> {
+    implements $DomainRecordCopyWith<$Res> {
   factory _$$_DomainRecordResponseCopyWith(_$_DomainRecordResponse value,
           $Res Function(_$_DomainRecordResponse) then) =
       __$$_DomainRecordResponseCopyWithImpl<$Res>;
@@ -158,7 +157,7 @@ abstract class _$$_DomainRecordResponseCopyWith<$Res>
 
 /// @nodoc
 class __$$_DomainRecordResponseCopyWithImpl<$Res>
-    extends _$DomainRecordResponseCopyWithImpl<$Res, _$_DomainRecordResponse>
+    extends _$DomainRecordCopyWithImpl<$Res, _$_DomainRecordResponse>
     implements _$$_DomainRecordResponseCopyWith<$Res> {
   __$$_DomainRecordResponseCopyWithImpl(_$_DomainRecordResponse _value,
       $Res Function(_$_DomainRecordResponse) _then)
@@ -269,7 +268,7 @@ class _$_DomainRecordResponse implements _DomainRecordResponse {
 
   @override
   String toString() {
-    return 'DomainRecordResponse(record: $record, type: $type, ttl: $ttl, status: $status, name: $name, value: $value, routingPolicy: $routingPolicy, priority: $priority, proxyStatus: $proxyStatus)';
+    return 'DomainRecord(record: $record, type: $type, ttl: $ttl, status: $status, name: $name, value: $value, routingPolicy: $routingPolicy, priority: $priority, proxyStatus: $proxyStatus)';
   }
 
   @override
@@ -311,7 +310,7 @@ class _$_DomainRecordResponse implements _DomainRecordResponse {
   }
 }
 
-abstract class _DomainRecordResponse implements DomainRecordResponse {
+abstract class _DomainRecordResponse implements DomainRecord {
   const factory _DomainRecordResponse(
       {@JsonKey(name: 'record', unknownEnumValue: RecordType.unknown)
       required final RecordType record,

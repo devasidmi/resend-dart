@@ -22,7 +22,7 @@ GetApiKeysListResponse _$GetApiKeysListResponseFromJson(
 /// @nodoc
 mixin _$GetApiKeysListResponse {
   @JsonKey(name: 'data')
-  List<ApiKeyResponse> get keys => throw _privateConstructorUsedError;
+  List<ResendApiKey> get keys => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +36,7 @@ abstract class $GetApiKeysListResponseCopyWith<$Res> {
           $Res Function(GetApiKeysListResponse) then) =
       _$GetApiKeysListResponseCopyWithImpl<$Res, GetApiKeysListResponse>;
   @useResult
-  $Res call({@JsonKey(name: 'data') List<ApiKeyResponse> keys});
+  $Res call({@JsonKey(name: 'data') List<ResendApiKey> keys});
 }
 
 /// @nodoc
@@ -59,7 +59,7 @@ class _$GetApiKeysListResponseCopyWithImpl<$Res,
       keys: null == keys
           ? _value.keys
           : keys // ignore: cast_nullable_to_non_nullable
-              as List<ApiKeyResponse>,
+              as List<ResendApiKey>,
     ) as $Val);
   }
 }
@@ -72,7 +72,7 @@ abstract class _$$_GetApiKeysListResponseCopyWith<$Res>
       __$$_GetApiKeysListResponseCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'data') List<ApiKeyResponse> keys});
+  $Res call({@JsonKey(name: 'data') List<ResendApiKey> keys});
 }
 
 /// @nodoc
@@ -93,7 +93,7 @@ class __$$_GetApiKeysListResponseCopyWithImpl<$Res>
       keys: null == keys
           ? _value._keys
           : keys // ignore: cast_nullable_to_non_nullable
-              as List<ApiKeyResponse>,
+              as List<ResendApiKey>,
     ));
   }
 }
@@ -102,16 +102,16 @@ class __$$_GetApiKeysListResponseCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_GetApiKeysListResponse implements _GetApiKeysListResponse {
   const _$_GetApiKeysListResponse(
-      {@JsonKey(name: 'data') required final List<ApiKeyResponse> keys})
+      {@JsonKey(name: 'data') required final List<ResendApiKey> keys})
       : _keys = keys;
 
   factory _$_GetApiKeysListResponse.fromJson(Map<String, dynamic> json) =>
       _$$_GetApiKeysListResponseFromJson(json);
 
-  final List<ApiKeyResponse> _keys;
+  final List<ResendApiKey> _keys;
   @override
   @JsonKey(name: 'data')
-  List<ApiKeyResponse> get keys {
+  List<ResendApiKey> get keys {
     if (_keys is EqualUnmodifiableListView) return _keys;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_keys);
@@ -152,7 +152,7 @@ class _$_GetApiKeysListResponse implements _GetApiKeysListResponse {
 
 abstract class _GetApiKeysListResponse implements GetApiKeysListResponse {
   const factory _GetApiKeysListResponse(
-          {@JsonKey(name: 'data') required final List<ApiKeyResponse> keys}) =
+          {@JsonKey(name: 'data') required final List<ResendApiKey> keys}) =
       _$_GetApiKeysListResponse;
 
   factory _GetApiKeysListResponse.fromJson(Map<String, dynamic> json) =
@@ -160,7 +160,7 @@ abstract class _GetApiKeysListResponse implements GetApiKeysListResponse {
 
   @override
   @JsonKey(name: 'data')
-  List<ApiKeyResponse> get keys;
+  List<ResendApiKey> get keys;
   @override
   @JsonKey(ignore: true)
   _$$_GetApiKeysListResponseCopyWith<_$_GetApiKeysListResponse> get copyWith =>

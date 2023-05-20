@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-enum DomainRegion {
+enum ResendDomainRegion {
   @JsonValue('us-east-1')
   usEast1,
   @JsonValue('eu-west-1')

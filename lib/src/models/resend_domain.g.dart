@@ -1,21 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'domain_body.dart';
+part of 'resend_domain.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DomainBody _$$_DomainBodyFromJson(Map json) => _$_DomainBody(
+_$_ResendDomain _$$_ResendDomainFromJson(Map json) => _$_ResendDomain(
+      id: json['id'] as String,
       name: json['name'] as String,
-      region: $enumDecodeNullable(_$ResendDomainRegionEnumMap, json['region'],
-              unknownValue: ResendDomainRegion.unknown) ??
-          ResendDomainRegion.usEast1,
+      status: json['status'] as String,
+      createdAt: DateTime.parse(json['created_at'] as String),
+      region: $enumDecode(_$ResendDomainRegionEnumMap, json['region'],
+          unknownValue: ResendDomainRegion.unknown),
     );
 
-Map<String, dynamic> _$$_DomainBodyToJson(_$_DomainBody instance) =>
+Map<String, dynamic> _$$_ResendDomainToJson(_$_ResendDomain instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'name': instance.name,
+      'status': instance.status,
+      'created_at': instance.createdAt.toIso8601String(),
       'region': _$ResendDomainRegionEnumMap[instance.region]!,
     };
 

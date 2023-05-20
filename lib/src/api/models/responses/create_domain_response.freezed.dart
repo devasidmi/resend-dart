@@ -29,9 +29,9 @@ mixin _$CreateDomainResponse {
   @JsonKey(name: 'created_at')
   DateTime get createdAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'records')
-  List<DomainRecordResponse> get records => throw _privateConstructorUsedError;
-  @JsonKey(name: 'region', unknownEnumValue: DomainRegion.unknown)
-  DomainRegion get region => throw _privateConstructorUsedError;
+  List<DomainRecord> get records => throw _privateConstructorUsedError;
+  @JsonKey(name: 'region', unknownEnumValue: ResendDomainRegion.unknown)
+  ResendDomainRegion get region => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -51,9 +51,9 @@ abstract class $CreateDomainResponseCopyWith<$Res> {
       @JsonKey(name: 'status', unknownEnumValue: DomainStatus.unknown)
       DomainStatus status,
       @JsonKey(name: 'created_at') DateTime createdAt,
-      @JsonKey(name: 'records') List<DomainRecordResponse> records,
-      @JsonKey(name: 'region', unknownEnumValue: DomainRegion.unknown)
-      DomainRegion region});
+      @JsonKey(name: 'records') List<DomainRecord> records,
+      @JsonKey(name: 'region', unknownEnumValue: ResendDomainRegion.unknown)
+      ResendDomainRegion region});
 }
 
 /// @nodoc
@@ -97,11 +97,11 @@ class _$CreateDomainResponseCopyWithImpl<$Res,
       records: null == records
           ? _value.records
           : records // ignore: cast_nullable_to_non_nullable
-              as List<DomainRecordResponse>,
+              as List<DomainRecord>,
       region: null == region
           ? _value.region
           : region // ignore: cast_nullable_to_non_nullable
-              as DomainRegion,
+              as ResendDomainRegion,
     ) as $Val);
   }
 }
@@ -120,9 +120,9 @@ abstract class _$$_CreateDomainResponseCopyWith<$Res>
       @JsonKey(name: 'status', unknownEnumValue: DomainStatus.unknown)
       DomainStatus status,
       @JsonKey(name: 'created_at') DateTime createdAt,
-      @JsonKey(name: 'records') List<DomainRecordResponse> records,
-      @JsonKey(name: 'region', unknownEnumValue: DomainRegion.unknown)
-      DomainRegion region});
+      @JsonKey(name: 'records') List<DomainRecord> records,
+      @JsonKey(name: 'region', unknownEnumValue: ResendDomainRegion.unknown)
+      ResendDomainRegion region});
 }
 
 /// @nodoc
@@ -163,11 +163,11 @@ class __$$_CreateDomainResponseCopyWithImpl<$Res>
       records: null == records
           ? _value._records
           : records // ignore: cast_nullable_to_non_nullable
-              as List<DomainRecordResponse>,
+              as List<DomainRecord>,
       region: null == region
           ? _value.region
           : region // ignore: cast_nullable_to_non_nullable
-              as DomainRegion,
+              as ResendDomainRegion,
     ));
   }
 }
@@ -181,9 +181,8 @@ class _$_CreateDomainResponse implements _CreateDomainResponse {
       @JsonKey(name: 'status', unknownEnumValue: DomainStatus.unknown)
       required this.status,
       @JsonKey(name: 'created_at') required this.createdAt,
-      @JsonKey(name: 'records')
-      required final List<DomainRecordResponse> records,
-      @JsonKey(name: 'region', unknownEnumValue: DomainRegion.unknown)
+      @JsonKey(name: 'records') required final List<DomainRecord> records,
+      @JsonKey(name: 'region', unknownEnumValue: ResendDomainRegion.unknown)
       required this.region})
       : _records = records;
 
@@ -202,18 +201,18 @@ class _$_CreateDomainResponse implements _CreateDomainResponse {
   @override
   @JsonKey(name: 'created_at')
   final DateTime createdAt;
-  final List<DomainRecordResponse> _records;
+  final List<DomainRecord> _records;
   @override
   @JsonKey(name: 'records')
-  List<DomainRecordResponse> get records {
+  List<DomainRecord> get records {
     if (_records is EqualUnmodifiableListView) return _records;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_records);
   }
 
   @override
-  @JsonKey(name: 'region', unknownEnumValue: DomainRegion.unknown)
-  final DomainRegion region;
+  @JsonKey(name: 'region', unknownEnumValue: ResendDomainRegion.unknown)
+  final ResendDomainRegion region;
 
   @override
   String toString() {
@@ -261,10 +260,9 @@ abstract class _CreateDomainResponse implements CreateDomainResponse {
       @JsonKey(name: 'status', unknownEnumValue: DomainStatus.unknown)
       required final DomainStatus status,
       @JsonKey(name: 'created_at') required final DateTime createdAt,
-      @JsonKey(name: 'records')
-      required final List<DomainRecordResponse> records,
-      @JsonKey(name: 'region', unknownEnumValue: DomainRegion.unknown)
-      required final DomainRegion region}) = _$_CreateDomainResponse;
+      @JsonKey(name: 'records') required final List<DomainRecord> records,
+      @JsonKey(name: 'region', unknownEnumValue: ResendDomainRegion.unknown)
+      required final ResendDomainRegion region}) = _$_CreateDomainResponse;
 
   factory _CreateDomainResponse.fromJson(Map<String, dynamic> json) =
       _$_CreateDomainResponse.fromJson;
@@ -283,10 +281,10 @@ abstract class _CreateDomainResponse implements CreateDomainResponse {
   DateTime get createdAt;
   @override
   @JsonKey(name: 'records')
-  List<DomainRecordResponse> get records;
+  List<DomainRecord> get records;
   @override
-  @JsonKey(name: 'region', unknownEnumValue: DomainRegion.unknown)
-  DomainRegion get region;
+  @JsonKey(name: 'region', unknownEnumValue: ResendDomainRegion.unknown)
+  ResendDomainRegion get region;
   @override
   @JsonKey(ignore: true)
   _$$_CreateDomainResponseCopyWith<_$_CreateDomainResponse> get copyWith =>

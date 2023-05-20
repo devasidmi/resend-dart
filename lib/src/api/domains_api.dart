@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'package:meta/meta.dart';
 import 'package:resend_dart/src/api/api_client.dart';
 import 'package:resend_dart/src/api/api_path.dart';
-import 'package:resend_dart/src/api/models/create_domain_response.dart';
-import 'package:resend_dart/src/api/models/domains_list_response.dart';
+import 'package:resend_dart/src/api/models/responses/create_domain_response.dart';
+import 'package:resend_dart/src/api/models/responses/get_domains_list_response.dart';
 import 'package:resend_dart/src/domains/models/domain_body.dart';
 
 @internal
@@ -29,7 +29,7 @@ class DomainsApi {
     return CreateDomainResponse.fromJson(json);
   }
 
-  Future<DomainsListResponse> getDomainsList() async {
+  Future<GetDomainsListResponse> getDomainsList() async {
     final url = Uri.https(
       _apiClient.baseUrl,
       ApiPath.domains,
@@ -39,7 +39,7 @@ class DomainsApi {
       // TODO(vasidmi): handle error
     }
     final json = jsonDecode(response.body) as Map<String, Object?>;
-    return DomainsListResponse.fromJson(json);
+    return GetDomainsListResponse.fromJson(json);
   }
 
   Future<void> deleteDomain({required String domainId}) async {

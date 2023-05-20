@@ -1,7 +1,7 @@
 import 'package:meta/meta.dart';
 import 'package:resend_dart/src/api/api_client.dart';
-import 'package:resend_dart/src/api/models/create_api_key_response.dart';
-import 'package:resend_dart/src/api/models/get_api_keys_list_response.dart';
+import 'package:resend_dart/src/api/models/responses/create_api_key_response.dart';
+import 'package:resend_dart/src/api/models/responses/get_api_keys_list_response.dart';
 import 'package:resend_dart/src/api_keys/models/create_api_key_body.dart';
 import 'package:resend_dart/src/models/resend_permission.dart';
 

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'send_email_response.dart';
+part of 'create_email_response.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,34 +14,34 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-SendEmailResponse _$SendEmailResponseFromJson(Map<String, dynamic> json) {
+CreateEmailResponse _$CreateEmailResponseFromJson(Map<String, dynamic> json) {
   return _SendEmailResponse.fromJson(json);
 }
 
 /// @nodoc
-mixin _$SendEmailResponse {
+mixin _$CreateEmailResponse {
   @JsonKey(name: 'id')
   String get id => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SendEmailResponseCopyWith<SendEmailResponse> get copyWith =>
+  $CreateEmailResponseCopyWith<CreateEmailResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SendEmailResponseCopyWith<$Res> {
-  factory $SendEmailResponseCopyWith(
-          SendEmailResponse value, $Res Function(SendEmailResponse) then) =
-      _$SendEmailResponseCopyWithImpl<$Res, SendEmailResponse>;
+abstract class $CreateEmailResponseCopyWith<$Res> {
+  factory $CreateEmailResponseCopyWith(
+          CreateEmailResponse value, $Res Function(CreateEmailResponse) then) =
+      _$CreateEmailResponseCopyWithImpl<$Res, CreateEmailResponse>;
   @useResult
   $Res call({@JsonKey(name: 'id') String id});
 }
 
 /// @nodoc
-class _$SendEmailResponseCopyWithImpl<$Res, $Val extends SendEmailResponse>
-    implements $SendEmailResponseCopyWith<$Res> {
-  _$SendEmailResponseCopyWithImpl(this._value, this._then);
+class _$CreateEmailResponseCopyWithImpl<$Res, $Val extends CreateEmailResponse>
+    implements $CreateEmailResponseCopyWith<$Res> {
+  _$CreateEmailResponseCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -64,7 +64,7 @@ class _$SendEmailResponseCopyWithImpl<$Res, $Val extends SendEmailResponse>
 
 /// @nodoc
 abstract class _$$_SendEmailResponseCopyWith<$Res>
-    implements $SendEmailResponseCopyWith<$Res> {
+    implements $CreateEmailResponseCopyWith<$Res> {
   factory _$$_SendEmailResponseCopyWith(_$_SendEmailResponse value,
           $Res Function(_$_SendEmailResponse) then) =
       __$$_SendEmailResponseCopyWithImpl<$Res>;
@@ -75,7 +75,7 @@ abstract class _$$_SendEmailResponseCopyWith<$Res>
 
 /// @nodoc
 class __$$_SendEmailResponseCopyWithImpl<$Res>
-    extends _$SendEmailResponseCopyWithImpl<$Res, _$_SendEmailResponse>
+    extends _$CreateEmailResponseCopyWithImpl<$Res, _$_SendEmailResponse>
     implements _$$_SendEmailResponseCopyWith<$Res> {
   __$$_SendEmailResponseCopyWithImpl(
       _$_SendEmailResponse _value, $Res Function(_$_SendEmailResponse) _then)
@@ -109,7 +109,7 @@ class _$_SendEmailResponse implements _SendEmailResponse {
 
   @override
   String toString() {
-    return 'SendEmailResponse(id: $id)';
+    return 'CreateEmailResponse(id: $id)';
   }
 
   @override
@@ -139,7 +139,7 @@ class _$_SendEmailResponse implements _SendEmailResponse {
   }
 }
 
-abstract class _SendEmailResponse implements SendEmailResponse {
+abstract class _SendEmailResponse implements CreateEmailResponse {
   const factory _SendEmailResponse(
       {@JsonKey(name: 'id') required final String id}) = _$_SendEmailResponse;
 

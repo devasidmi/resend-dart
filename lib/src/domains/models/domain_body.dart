@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:resend_dart/src/models/domain_region.dart';
+import 'package:resend_dart/src/models/resend_domain_region.dart';
 
 part 'domain_body.freezed.dart';
 part 'domain_body.g.dart';
@@ -11,10 +11,10 @@ class DomainBody with _$DomainBody {
     @JsonKey(name: 'name') required String name,
     @JsonKey(
       name: 'region',
-      unknownEnumValue: DomainRegion.unknown,
+      unknownEnumValue: ResendDomainRegion.unknown,
     )
-    @Default(DomainRegion.usEast1)
-    DomainRegion region,
+    @Default(ResendDomainRegion.usEast1)
+    ResendDomainRegion region,
   }) = _DomainBody;
 
   factory DomainBody.fromJson(Map<String, Object?> json) =>

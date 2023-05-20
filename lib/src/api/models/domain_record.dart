@@ -1,16 +1,16 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:resend_dart/src/api/models/domain_record_type.dart';
 import 'package:resend_dart/src/api/models/domain_status.dart';
-import 'package:resend_dart/src/api/models/proxy_status_response.dart';
+import 'package:resend_dart/src/api/models/proxy_status.dart';
 import 'package:resend_dart/src/api/models/record_type.dart';
 
-part 'domain_record_response.freezed.dart';
-part 'domain_record_response.g.dart';
+part 'domain_record.freezed.dart';
+part 'domain_record.g.dart';
 
 @internal
 @freezed
-class DomainRecordResponse with _$DomainRecordResponse {
-  const factory DomainRecordResponse({
+class DomainRecord with _$DomainRecord {
+  const factory DomainRecord({
     @JsonKey(name: 'record', unknownEnumValue: RecordType.unknown)
     required RecordType record,
     @JsonKey(name: 'type', unknownEnumValue: DomainRecordType.unknown)
@@ -26,6 +26,6 @@ class DomainRecordResponse with _$DomainRecordResponse {
     ProxyStatus? proxyStatus,
   }) = _DomainRecordResponse;
 
-  factory DomainRecordResponse.fromJson(Map<String, dynamic> json) =>
-      _$DomainRecordResponseFromJson(json);
+  factory DomainRecord.fromJson(Map<String, Object?> json) =>
+      _$DomainRecordFromJson(json);
 }

@@ -1,7 +1,7 @@
 import 'package:meta/meta.dart';
 import 'package:resend_dart/src/api/api_client.dart';
-import 'package:resend_dart/src/api/models/get_email_response.dart';
-import 'package:resend_dart/src/api/models/send_email_response.dart';
+import 'package:resend_dart/src/api/models/responses/create_email_response.dart';
+import 'package:resend_dart/src/api/models/responses/get_email_response.dart';
 import 'package:resend_dart/src/email/models/attachment.dart';
 import 'package:resend_dart/src/email/models/send_email_body.dart';
 import 'package:resend_dart/src/email/models/tag.dart';
@@ -12,7 +12,7 @@ class Email {
 
   const Email(this._apiClient);
 
-  Future<SendEmailResponse> send({
+  Future<CreateEmailResponse> send({
     /// Sender email address
     /// To include a friendly name, use the format "Your Name <sender@domain.com>"
     required String from,
@@ -56,7 +56,7 @@ class Email {
       tags: tags,
       text: text,
     );
-    final response = await _apiClient.emails.send(body);
+    final response = await _apiClient.emails.create(body);
     return response;
   }
 

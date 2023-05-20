@@ -14,11 +14,11 @@ _$_CreateDomainResponse _$$_CreateDomainResponseFromJson(Map json) =>
           unknownValue: DomainStatus.unknown),
       createdAt: DateTime.parse(json['created_at'] as String),
       records: (json['records'] as List<dynamic>)
-          .map((e) => DomainRecordResponse.fromJson(
-              Map<String, dynamic>.from(e as Map)))
+          .map(
+              (e) => DomainRecord.fromJson(Map<String, Object?>.from(e as Map)))
           .toList(),
-      region: $enumDecode(_$DomainRegionEnumMap, json['region'],
-          unknownValue: DomainRegion.unknown),
+      region: $enumDecode(_$ResendDomainRegionEnumMap, json['region'],
+          unknownValue: ResendDomainRegion.unknown),
     );
 
 Map<String, dynamic> _$$_CreateDomainResponseToJson(
@@ -29,7 +29,7 @@ Map<String, dynamic> _$$_CreateDomainResponseToJson(
       'status': _$DomainStatusEnumMap[instance.status]!,
       'created_at': instance.createdAt.toIso8601String(),
       'records': instance.records,
-      'region': _$DomainRegionEnumMap[instance.region]!,
+      'region': _$ResendDomainRegionEnumMap[instance.region]!,
     };
 
 const _$DomainStatusEnumMap = {
@@ -41,9 +41,9 @@ const _$DomainStatusEnumMap = {
   DomainStatus.unknown: 'unknown',
 };
 
-const _$DomainRegionEnumMap = {
-  DomainRegion.usEast1: 'us-east-1',
-  DomainRegion.euWest1: 'eu-west-1',
-  DomainRegion.saEast1: 'sa-east-1',
-  DomainRegion.unknown: 'unknown',
+const _$ResendDomainRegionEnumMap = {
+  ResendDomainRegion.usEast1: 'us-east-1',
+  ResendDomainRegion.euWest1: 'eu-west-1',
+  ResendDomainRegion.saEast1: 'sa-east-1',
+  ResendDomainRegion.unknown: 'unknown',
 };

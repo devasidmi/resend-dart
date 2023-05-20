@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'send_email_response.dart';
+part of 'create_email_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

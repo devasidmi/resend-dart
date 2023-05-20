@@ -22,8 +22,8 @@ DomainBody _$DomainBodyFromJson(Map<String, dynamic> json) {
 mixin _$DomainBody {
   @JsonKey(name: 'name')
   String get name => throw _privateConstructorUsedError;
-  @JsonKey(name: 'region', unknownEnumValue: DomainRegion.unknown)
-  DomainRegion get region => throw _privateConstructorUsedError;
+  @JsonKey(name: 'region', unknownEnumValue: ResendDomainRegion.unknown)
+  ResendDomainRegion get region => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -39,8 +39,8 @@ abstract class $DomainBodyCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'name') String name,
-      @JsonKey(name: 'region', unknownEnumValue: DomainRegion.unknown)
-      DomainRegion region});
+      @JsonKey(name: 'region', unknownEnumValue: ResendDomainRegion.unknown)
+      ResendDomainRegion region});
 }
 
 /// @nodoc
@@ -67,7 +67,7 @@ class _$DomainBodyCopyWithImpl<$Res, $Val extends DomainBody>
       region: null == region
           ? _value.region
           : region // ignore: cast_nullable_to_non_nullable
-              as DomainRegion,
+              as ResendDomainRegion,
     ) as $Val);
   }
 }
@@ -82,8 +82,8 @@ abstract class _$$_DomainBodyCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'name') String name,
-      @JsonKey(name: 'region', unknownEnumValue: DomainRegion.unknown)
-      DomainRegion region});
+      @JsonKey(name: 'region', unknownEnumValue: ResendDomainRegion.unknown)
+      ResendDomainRegion region});
 }
 
 /// @nodoc
@@ -108,7 +108,7 @@ class __$$_DomainBodyCopyWithImpl<$Res>
       region: null == region
           ? _value.region
           : region // ignore: cast_nullable_to_non_nullable
-              as DomainRegion,
+              as ResendDomainRegion,
     ));
   }
 }
@@ -118,8 +118,8 @@ class __$$_DomainBodyCopyWithImpl<$Res>
 class _$_DomainBody implements _DomainBody {
   const _$_DomainBody(
       {@JsonKey(name: 'name') required this.name,
-      @JsonKey(name: 'region', unknownEnumValue: DomainRegion.unknown)
-      this.region = DomainRegion.usEast1});
+      @JsonKey(name: 'region', unknownEnumValue: ResendDomainRegion.unknown)
+      this.region = ResendDomainRegion.usEast1});
 
   factory _$_DomainBody.fromJson(Map<String, dynamic> json) =>
       _$$_DomainBodyFromJson(json);
@@ -128,8 +128,8 @@ class _$_DomainBody implements _DomainBody {
   @JsonKey(name: 'name')
   final String name;
   @override
-  @JsonKey(name: 'region', unknownEnumValue: DomainRegion.unknown)
-  final DomainRegion region;
+  @JsonKey(name: 'region', unknownEnumValue: ResendDomainRegion.unknown)
+  final ResendDomainRegion region;
 
   @override
   String toString() {
@@ -166,8 +166,8 @@ class _$_DomainBody implements _DomainBody {
 abstract class _DomainBody implements DomainBody {
   const factory _DomainBody(
       {@JsonKey(name: 'name') required final String name,
-      @JsonKey(name: 'region', unknownEnumValue: DomainRegion.unknown)
-      final DomainRegion region}) = _$_DomainBody;
+      @JsonKey(name: 'region', unknownEnumValue: ResendDomainRegion.unknown)
+      final ResendDomainRegion region}) = _$_DomainBody;
 
   factory _DomainBody.fromJson(Map<String, dynamic> json) =
       _$_DomainBody.fromJson;
@@ -176,8 +176,8 @@ abstract class _DomainBody implements DomainBody {
   @JsonKey(name: 'name')
   String get name;
   @override
-  @JsonKey(name: 'region', unknownEnumValue: DomainRegion.unknown)
-  DomainRegion get region;
+  @JsonKey(name: 'region', unknownEnumValue: ResendDomainRegion.unknown)
+  ResendDomainRegion get region;
   @override
   @JsonKey(ignore: true)
   _$$_DomainBodyCopyWith<_$_DomainBody> get copyWith =>

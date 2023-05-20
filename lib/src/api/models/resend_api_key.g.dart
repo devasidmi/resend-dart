@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'api_key_response.dart';
+part of 'resend_api_key.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
