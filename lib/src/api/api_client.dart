@@ -42,7 +42,7 @@ class ApiClient {
     return SendEmailResponse.fromJson(json);
   }
 
-  Future<GetEmailResponse> retrieveEmail({required String id}) async {
+  Future<GetEmailResponse> getEmail({required String id}) async {
     final url = Uri.https(
       _baseUrl,
       ApiPath.retrieveEmail(id: id),
@@ -97,6 +97,20 @@ class ApiClient {
       ApiPath.deleteApiKey(id: apiKeyId),
     );
     final response = await http.delete(
+      url,
+      headers: _headers,
+    );
+    if (response.statusCode != 200) {
+      // TODO(vasidmi): handle error
+    }
+  }
+
+  Future<void> getDomainsList() async {
+    final url = Uri.https(
+      _baseUrl,
+      ApiPath.domains,
+    );
+    final response = await http.get(
       url,
       headers: _headers,
     );

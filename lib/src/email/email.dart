@@ -61,7 +61,7 @@ class Email {
   }
 
   Future<GetEmailResponse> get({required String id}) async {
-    final response = await _apiClient.retrieveEmail(id: id);
+    final response = await _apiClient.getEmail(id: id);
     return response;
   }
 }
