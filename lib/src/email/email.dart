@@ -1,6 +1,6 @@
 import 'package:meta/meta.dart';
 import 'package:resend_dart/src/api/api_client.dart';
-import 'package:resend_dart/src/api/models/retrieve_email_response.dart';
+import 'package:resend_dart/src/api/models/get_email_response.dart';
 import 'package:resend_dart/src/api/models/send_email_response.dart';
 import 'package:resend_dart/src/email/models/attachment.dart';
 import 'package:resend_dart/src/email/models/send_email_body.dart';
@@ -56,12 +56,12 @@ class Email {
       tags: tags,
       text: text,
     );
-    final result = await _apiClient.sendEmail(body);
-    return result;
+    final response = await _apiClient.sendEmail(body);
+    return response;
   }
 
-  Future<RetrieveEmailResponse> retrieve({required String id}) async {
-    final result = await _apiClient.retrieveEmail(id: id);
-    return result;
+  Future<GetEmailResponse> get({required String id}) async {
+    final response = await _apiClient.retrieveEmail(id: id);
+    return response;
   }
 }

@@ -5,7 +5,7 @@ import 'package:meta/meta.dart';
 import 'package:resend_dart/src/api/api_path.dart';
 import 'package:resend_dart/src/api/models/api_keys_list_response.dart';
 import 'package:resend_dart/src/api/models/create_api_key_response.dart';
-import 'package:resend_dart/src/api/models/retrieve_email_response.dart';
+import 'package:resend_dart/src/api/models/get_email_response.dart';
 import 'package:resend_dart/src/api/models/send_email_response.dart';
 import 'package:resend_dart/src/api_keys/models/create_api_key_body.dart';
 import 'package:resend_dart/src/email/models/send_email_body.dart';
@@ -42,7 +42,7 @@ class ApiClient {
     return SendEmailResponse.fromJson(json);
   }
 
-  Future<RetrieveEmailResponse> retrieveEmail({required String id}) async {
+  Future<GetEmailResponse> retrieveEmail({required String id}) async {
     final url = Uri.https(
       _baseUrl,
       ApiPath.retrieveEmail(id: id),
@@ -55,7 +55,7 @@ class ApiClient {
       // TODO(vasidmi): handle error
     }
     final json = jsonDecode(response.body) as Map<String, Object?>;
-    return RetrieveEmailResponse.fromJson(json);
+    return GetEmailResponse.fromJson(json);
   }
 
   Future<CreateApiKeyResponse> createApiKey(CreateApiKeyBody body) async {
