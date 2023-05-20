@@ -4,7 +4,6 @@ import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:resend_dart/resend_dart.dart';
 import 'package:resend_dart/src/email/models/attachment.dart';
-import 'package:resend_dart/src/models/permission.dart';
 
 void main() {
   final credentials = File('test/credentials.json').readAsStringSync();
@@ -12,7 +11,8 @@ void main() {
   final apiKey = credentialsJson['api_key'] as String?;
   final userEmail = credentialsJson['user_email'] as String?;
 
-  if (apiKey == null || userEmail == null) {
+  if ((apiKey == null || apiKey.isEmpty) ||
+      (userEmail == null || userEmail.isEmpty)) {
     throw Exception(
       'Provide valid credentials config with valid api_key and user_email',
     );
@@ -21,7 +21,7 @@ void main() {
   final resend = Resend(apiKey: apiKey);
 
   group(
-    'Email tests',
+    'Email api tests',
     () {
       Future<bool> emailSent(String sentEmailId) async {
         final getEmailResponse = await resend.email.get(id: sentEmailId);
@@ -55,7 +55,7 @@ void main() {
         },
       );
       group(
-        'Email attachment test',
+        'Send email with single attachment',
         () {
           test(
             'Send email with attachment',
@@ -105,25 +105,6 @@ void main() {
           );
         },
       );
-    },
-  );
-
-  test(
-    'Create apiKey, get it from the server and delete',
-    () async {
-      final createResponse = await resend.apiKeys.create(
-        name: 'Test key',
-        permission: ResendPermission.fullAccess,
-      );
-      final createdApiKey = createResponse.id;
-      final keys = await resend.apiKeys.get();
-      final keysIds = keys.map((key) => key.id).toSet();
-      expect(keysIds.contains(createdApiKey), isTrue);
-
-      await resend.apiKeys.delete(apiKeyId: createdApiKey);
-      final keysAfterDelete = await resend.apiKeys.get();
-      final keysAfterDeleteIds = keysAfterDelete.map((key) => key.id).toSet();
-      expect(keysAfterDeleteIds.contains(createdApiKey), isFalse);
     },
   );
 }
