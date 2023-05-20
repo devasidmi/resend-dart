@@ -5,6 +5,7 @@ import 'package:resend_dart/src/api/api_client.dart';
 import 'package:resend_dart/src/api/api_path.dart';
 import 'package:resend_dart/src/api/models/responses/create_api_key_response.dart';
 import 'package:resend_dart/src/api/models/responses/get_api_keys_list_response.dart';
+import 'package:resend_dart/src/api/resend_api_exception.dart';
 import 'package:resend_dart/src/api_keys/models/create_api_key_body.dart';
 
 @internal
@@ -23,7 +24,8 @@ class ApiKeysApi {
       body: _apiClient.toJsonString(body.toJson()),
     );
     if (response.statusCode != 200) {
-      // TODO(vasidmi): handle error
+      final errorJson = jsonDecode(response.body) as Map<String, Object?>;
+      throw ResendApiException.fromJson(errorJson);
     }
     final json = jsonDecode(response.body) as Map<String, Object?>;
     return CreateApiKeyResponse.fromJson(json);
@@ -36,7 +38,8 @@ class ApiKeysApi {
     );
     final response = await _apiClient.get(url);
     if (response.statusCode != 200) {
-      // TODO(vasidmi): handle error
+      final errorJson = jsonDecode(response.body) as Map<String, Object?>;
+      throw ResendApiException.fromJson(errorJson);
     }
     final json = jsonDecode(response.body) as Map<String, Object?>;
     return GetApiKeysListResponse.fromJson(json);
@@ -49,7 +52,8 @@ class ApiKeysApi {
     );
     final response = await _apiClient.delete(url);
     if (response.statusCode != 200) {
-      // TODO(vasidmi): handle error
+      final errorJson = jsonDecode(response.body) as Map<String, Object?>;
+      throw ResendApiException.fromJson(errorJson);
     }
   }
 }

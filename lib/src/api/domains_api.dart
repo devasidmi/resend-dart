@@ -6,6 +6,7 @@ import 'package:resend_dart/src/api/api_path.dart';
 import 'package:resend_dart/src/api/models/responses/create_domain_response.dart';
 import 'package:resend_dart/src/api/models/responses/get_domain_response.dart';
 import 'package:resend_dart/src/api/models/responses/get_domains_list_response.dart';
+import 'package:resend_dart/src/api/resend_api_exception.dart';
 import 'package:resend_dart/src/domains/models/domain_body.dart';
 
 @internal
@@ -24,7 +25,8 @@ class DomainsApi {
       body: _apiClient.toJsonString(body.toJson()),
     );
     if (response.statusCode != 200) {
-      // TODO(vasidmi): handle error
+      final errorJson = jsonDecode(response.body) as Map<String, Object?>;
+      throw ResendApiException.fromJson(errorJson);
     }
     final json = jsonDecode(response.body) as Map<String, Object?>;
     return CreateDomainResponse.fromJson(json);
@@ -37,7 +39,8 @@ class DomainsApi {
     );
     final response = await _apiClient.get(url);
     if (response.statusCode != 200) {
-      // TODO(vasidmi): handle error
+      final errorJson = jsonDecode(response.body) as Map<String, Object?>;
+      throw ResendApiException.fromJson(errorJson);
     }
     final json = jsonDecode(response.body) as Map<String, Object?>;
     return GetDomainResponse.fromJson(json);
@@ -50,7 +53,8 @@ class DomainsApi {
     );
     final response = await _apiClient.get(url);
     if (response.statusCode != 200) {
-      // TODO(vasidmi): handle error
+      final errorJson = jsonDecode(response.body) as Map<String, Object?>;
+      throw ResendApiException.fromJson(errorJson);
     }
     final json = jsonDecode(response.body) as Map<String, Object?>;
     return GetDomainsListResponse.fromJson(json);
@@ -63,7 +67,8 @@ class DomainsApi {
     );
     final response = await _apiClient.post(url);
     if (response.statusCode != 200) {
-      // TODO(vasidmi): handle error
+      final errorJson = jsonDecode(response.body) as Map<String, Object?>;
+      throw ResendApiException.fromJson(errorJson);
     }
   }
 
@@ -74,7 +79,8 @@ class DomainsApi {
     );
     final response = await _apiClient.delete(url);
     if (response.statusCode != 200) {
-      // TODO(vasidmi): handle error
+      final errorJson = jsonDecode(response.body) as Map<String, Object?>;
+      throw ResendApiException.fromJson(errorJson);
     }
   }
 }

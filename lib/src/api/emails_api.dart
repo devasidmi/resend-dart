@@ -5,6 +5,7 @@ import 'package:resend_dart/src/api/api_client.dart';
 import 'package:resend_dart/src/api/api_path.dart';
 import 'package:resend_dart/src/api/models/responses/create_email_response.dart';
 import 'package:resend_dart/src/api/models/responses/get_email_response.dart';
+import 'package:resend_dart/src/api/resend_api_exception.dart';
 import 'package:resend_dart/src/email/models/send_email_body.dart';
 
 @internal
@@ -20,7 +21,8 @@ class EmailsApi {
       body: _apiClient.toJsonString(body.toJson()),
     );
     if (response.statusCode != 200) {
-      // TODO(vasidmi): handle error
+      final errorJson = jsonDecode(response.body) as Map<String, Object?>;
+      throw ResendApiException.fromJson(errorJson);
     }
     final json = jsonDecode(response.body) as Map<String, Object?>;
     return CreateEmailResponse.fromJson(json);
@@ -33,7 +35,8 @@ class EmailsApi {
     );
     final response = await _apiClient.get(url);
     if (response.statusCode != 200) {
-      // TODO(vasidmi): handle error
+      final errorJson = jsonDecode(response.body) as Map<String, Object?>;
+      throw ResendApiException.fromJson(errorJson);
     }
     final json = jsonDecode(response.body) as Map<String, Object?>;
     return GetEmailResponse.fromJson(json);
