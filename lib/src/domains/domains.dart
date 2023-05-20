@@ -6,8 +6,8 @@ class Domains {
 
   const Domains(this._apiClient);
 
-  Future<DomainsListResponse> list() async {
-    final response = await _apiClient.domains.getDomainsList();
-    return response;
-  }
+  Future<DomainsListResponse> list() => _apiClient.domains.getDomainsList();
+
+  Future<void> delete({required String domainId}) =>
+      _apiClient.domains.deleteDomain(domainId: domainId);
 }

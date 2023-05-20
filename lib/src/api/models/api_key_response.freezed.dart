@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'api_key.dart';
+part of 'api_key_response.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-ApiKey _$ApiKeyFromJson(Map<String, dynamic> json) {
-  return _ApiKey.fromJson(json);
+ApiKeyResponse _$ApiKeyResponseFromJson(Map<String, dynamic> json) {
+  return _ApiKeyResponse.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ApiKey {
+mixin _$ApiKeyResponse {
   @JsonKey(name: 'id')
   String get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'name')
@@ -29,13 +29,15 @@ mixin _$ApiKey {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ApiKeyCopyWith<ApiKey> get copyWith => throw _privateConstructorUsedError;
+  $ApiKeyResponseCopyWith<ApiKeyResponse> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ApiKeyCopyWith<$Res> {
-  factory $ApiKeyCopyWith(ApiKey value, $Res Function(ApiKey) then) =
-      _$ApiKeyCopyWithImpl<$Res, ApiKey>;
+abstract class $ApiKeyResponseCopyWith<$Res> {
+  factory $ApiKeyResponseCopyWith(
+          ApiKeyResponse value, $Res Function(ApiKeyResponse) then) =
+      _$ApiKeyResponseCopyWithImpl<$Res, ApiKeyResponse>;
   @useResult
   $Res call(
       {@JsonKey(name: 'id') String id,
@@ -44,9 +46,9 @@ abstract class $ApiKeyCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ApiKeyCopyWithImpl<$Res, $Val extends ApiKey>
-    implements $ApiKeyCopyWith<$Res> {
-  _$ApiKeyCopyWithImpl(this._value, this._then);
+class _$ApiKeyResponseCopyWithImpl<$Res, $Val extends ApiKeyResponse>
+    implements $ApiKeyResponseCopyWith<$Res> {
+  _$ApiKeyResponseCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -78,9 +80,11 @@ class _$ApiKeyCopyWithImpl<$Res, $Val extends ApiKey>
 }
 
 /// @nodoc
-abstract class _$$_ApiKeyCopyWith<$Res> implements $ApiKeyCopyWith<$Res> {
-  factory _$$_ApiKeyCopyWith(_$_ApiKey value, $Res Function(_$_ApiKey) then) =
-      __$$_ApiKeyCopyWithImpl<$Res>;
+abstract class _$$_ApiKeyResponseCopyWith<$Res>
+    implements $ApiKeyResponseCopyWith<$Res> {
+  factory _$$_ApiKeyResponseCopyWith(
+          _$_ApiKeyResponse value, $Res Function(_$_ApiKeyResponse) then) =
+      __$$_ApiKeyResponseCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -90,10 +94,11 @@ abstract class _$$_ApiKeyCopyWith<$Res> implements $ApiKeyCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ApiKeyCopyWithImpl<$Res>
-    extends _$ApiKeyCopyWithImpl<$Res, _$_ApiKey>
-    implements _$$_ApiKeyCopyWith<$Res> {
-  __$$_ApiKeyCopyWithImpl(_$_ApiKey _value, $Res Function(_$_ApiKey) _then)
+class __$$_ApiKeyResponseCopyWithImpl<$Res>
+    extends _$ApiKeyResponseCopyWithImpl<$Res, _$_ApiKeyResponse>
+    implements _$$_ApiKeyResponseCopyWith<$Res> {
+  __$$_ApiKeyResponseCopyWithImpl(
+      _$_ApiKeyResponse _value, $Res Function(_$_ApiKeyResponse) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -103,7 +108,7 @@ class __$$_ApiKeyCopyWithImpl<$Res>
     Object? name = null,
     Object? createdAt = null,
   }) {
-    return _then(_$_ApiKey(
+    return _then(_$_ApiKeyResponse(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -122,14 +127,14 @@ class __$$_ApiKeyCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ApiKey implements _ApiKey {
-  const _$_ApiKey(
+class _$_ApiKeyResponse implements _ApiKeyResponse {
+  const _$_ApiKeyResponse(
       {@JsonKey(name: 'id') required this.id,
       @JsonKey(name: 'name') required this.name,
       @JsonKey(name: 'created_at') required this.createdAt});
 
-  factory _$_ApiKey.fromJson(Map<String, dynamic> json) =>
-      _$$_ApiKeyFromJson(json);
+  factory _$_ApiKeyResponse.fromJson(Map<String, dynamic> json) =>
+      _$$_ApiKeyResponseFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -143,14 +148,14 @@ class _$_ApiKey implements _ApiKey {
 
   @override
   String toString() {
-    return 'ApiKey(id: $id, name: $name, createdAt: $createdAt)';
+    return 'ApiKeyResponse(id: $id, name: $name, createdAt: $createdAt)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ApiKey &&
+            other is _$_ApiKeyResponse &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.createdAt, createdAt) ||
@@ -164,25 +169,26 @@ class _$_ApiKey implements _ApiKey {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ApiKeyCopyWith<_$_ApiKey> get copyWith =>
-      __$$_ApiKeyCopyWithImpl<_$_ApiKey>(this, _$identity);
+  _$$_ApiKeyResponseCopyWith<_$_ApiKeyResponse> get copyWith =>
+      __$$_ApiKeyResponseCopyWithImpl<_$_ApiKeyResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ApiKeyToJson(
+    return _$$_ApiKeyResponseToJson(
       this,
     );
   }
 }
 
-abstract class _ApiKey implements ApiKey {
-  const factory _ApiKey(
+abstract class _ApiKeyResponse implements ApiKeyResponse {
+  const factory _ApiKeyResponse(
           {@JsonKey(name: 'id') required final String id,
           @JsonKey(name: 'name') required final String name,
           @JsonKey(name: 'created_at') required final DateTime createdAt}) =
-      _$_ApiKey;
+      _$_ApiKeyResponse;
 
-  factory _ApiKey.fromJson(Map<String, dynamic> json) = _$_ApiKey.fromJson;
+  factory _ApiKeyResponse.fromJson(Map<String, dynamic> json) =
+      _$_ApiKeyResponse.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -195,6 +201,6 @@ abstract class _ApiKey implements ApiKey {
   DateTime get createdAt;
   @override
   @JsonKey(ignore: true)
-  _$$_ApiKeyCopyWith<_$_ApiKey> get copyWith =>
+  _$$_ApiKeyResponseCopyWith<_$_ApiKeyResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'package:meta/meta.dart';
 import 'package:resend_dart/src/api/api_client.dart';
 import 'package:resend_dart/src/api/api_path.dart';
-import 'package:resend_dart/src/api/models/api_keys_list_response.dart';
 import 'package:resend_dart/src/api/models/create_api_key_response.dart';
+import 'package:resend_dart/src/api/models/get_api_keys_list_response.dart';
 import 'package:resend_dart/src/api_keys/models/create_api_key_body.dart';
 
 @internal
@@ -29,7 +29,7 @@ class ApiKeysApi {
     return CreateApiKeyResponse.fromJson(json);
   }
 
-  Future<ApiKeysListResponse> getApiKeys() async {
+  Future<GetApiKeysListResponse> getApiKeys() async {
     final url = Uri.https(
       _apiClient.baseUrl,
       ApiPath.apiKeys,
@@ -39,7 +39,7 @@ class ApiKeysApi {
       // TODO(vasidmi): handle error
     }
     final json = jsonDecode(response.body) as Map<String, Object?>;
-    return ApiKeysListResponse.fromJson(json);
+    return GetApiKeysListResponse.fromJson(json);
   }
 
   Future<void> deleteApiKey({required String apiKeyId}) async {

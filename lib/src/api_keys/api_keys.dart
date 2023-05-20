@@ -1,8 +1,8 @@
 import 'package:meta/meta.dart';
 import 'package:resend_dart/src/api/api_client.dart';
 import 'package:resend_dart/src/api/models/create_api_key_response.dart';
+import 'package:resend_dart/src/api/models/get_api_keys_list_response.dart';
 import 'package:resend_dart/src/api_keys/models/create_api_key_body.dart';
-import 'package:resend_dart/src/models/api_key.dart';
 import 'package:resend_dart/src/models/resend_permission.dart';
 
 @internal
@@ -35,9 +35,9 @@ class ApiKeys {
   }
 
   /// Retrieve a list of API keys for the authenticated user
-  Future<List<ApiKey>> get() async {
+  Future<GetApiKeysListResponse> get() async {
     final response = await _apiClient.apiKeys.getApiKeys();
-    return response.keys;
+    return response;
   }
 
   /// Remove an existing API key

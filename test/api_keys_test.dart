@@ -24,12 +24,12 @@ void main() {
         permission: ResendPermission.fullAccess,
       );
       final createdApiKey = createResponse.id;
-      final keys = await resend.apiKeys.get();
+      final keys = (await resend.apiKeys.get()).keys;
       final keysIds = keys.map((key) => key.id).toSet();
       expect(keysIds.contains(createdApiKey), isTrue);
 
       await resend.apiKeys.delete(apiKeyId: createdApiKey);
-      final keysAfterDelete = await resend.apiKeys.get();
+      final keysAfterDelete = (await resend.apiKeys.get()).keys;
       final keysAfterDeleteIds = keysAfterDelete.map((key) => key.id).toSet();
       expect(keysAfterDeleteIds.contains(createdApiKey), isFalse);
     },

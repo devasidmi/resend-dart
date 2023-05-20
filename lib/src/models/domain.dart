@@ -4,6 +4,7 @@ import 'package:resend_dart/src/models/domain_region.dart';
 part 'domain.freezed.dart';
 part 'domain.g.dart';
 
+@internal
 @freezed
 class Domain with _$Domain {
   const factory Domain({

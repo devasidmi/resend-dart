@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'api_keys_list_response.dart';
+part of 'get_api_keys_list_response.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,34 +14,36 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-ApiKeysListResponse _$ApiKeysListResponseFromJson(Map<String, dynamic> json) {
-  return _ApiKeysListResponse.fromJson(json);
+GetApiKeysListResponse _$GetApiKeysListResponseFromJson(
+    Map<String, dynamic> json) {
+  return _GetApiKeysListResponse.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ApiKeysListResponse {
+mixin _$GetApiKeysListResponse {
   @JsonKey(name: 'data')
   List<ApiKeyResponse> get keys => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ApiKeysListResponseCopyWith<ApiKeysListResponse> get copyWith =>
+  $GetApiKeysListResponseCopyWith<GetApiKeysListResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ApiKeysListResponseCopyWith<$Res> {
-  factory $ApiKeysListResponseCopyWith(
-          ApiKeysListResponse value, $Res Function(ApiKeysListResponse) then) =
-      _$ApiKeysListResponseCopyWithImpl<$Res, ApiKeysListResponse>;
+abstract class $GetApiKeysListResponseCopyWith<$Res> {
+  factory $GetApiKeysListResponseCopyWith(GetApiKeysListResponse value,
+          $Res Function(GetApiKeysListResponse) then) =
+      _$GetApiKeysListResponseCopyWithImpl<$Res, GetApiKeysListResponse>;
   @useResult
   $Res call({@JsonKey(name: 'data') List<ApiKeyResponse> keys});
 }
 
 /// @nodoc
-class _$ApiKeysListResponseCopyWithImpl<$Res, $Val extends ApiKeysListResponse>
-    implements $ApiKeysListResponseCopyWith<$Res> {
-  _$ApiKeysListResponseCopyWithImpl(this._value, this._then);
+class _$GetApiKeysListResponseCopyWithImpl<$Res,
+        $Val extends GetApiKeysListResponse>
+    implements $GetApiKeysListResponseCopyWith<$Res> {
+  _$GetApiKeysListResponseCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -63,22 +65,23 @@ class _$ApiKeysListResponseCopyWithImpl<$Res, $Val extends ApiKeysListResponse>
 }
 
 /// @nodoc
-abstract class _$$_ApiKeysListResponseCopyWith<$Res>
-    implements $ApiKeysListResponseCopyWith<$Res> {
-  factory _$$_ApiKeysListResponseCopyWith(_$_ApiKeysListResponse value,
-          $Res Function(_$_ApiKeysListResponse) then) =
-      __$$_ApiKeysListResponseCopyWithImpl<$Res>;
+abstract class _$$_GetApiKeysListResponseCopyWith<$Res>
+    implements $GetApiKeysListResponseCopyWith<$Res> {
+  factory _$$_GetApiKeysListResponseCopyWith(_$_GetApiKeysListResponse value,
+          $Res Function(_$_GetApiKeysListResponse) then) =
+      __$$_GetApiKeysListResponseCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@JsonKey(name: 'data') List<ApiKeyResponse> keys});
 }
 
 /// @nodoc
-class __$$_ApiKeysListResponseCopyWithImpl<$Res>
-    extends _$ApiKeysListResponseCopyWithImpl<$Res, _$_ApiKeysListResponse>
-    implements _$$_ApiKeysListResponseCopyWith<$Res> {
-  __$$_ApiKeysListResponseCopyWithImpl(_$_ApiKeysListResponse _value,
-      $Res Function(_$_ApiKeysListResponse) _then)
+class __$$_GetApiKeysListResponseCopyWithImpl<$Res>
+    extends _$GetApiKeysListResponseCopyWithImpl<$Res,
+        _$_GetApiKeysListResponse>
+    implements _$$_GetApiKeysListResponseCopyWith<$Res> {
+  __$$_GetApiKeysListResponseCopyWithImpl(_$_GetApiKeysListResponse _value,
+      $Res Function(_$_GetApiKeysListResponse) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -86,7 +89,7 @@ class __$$_ApiKeysListResponseCopyWithImpl<$Res>
   $Res call({
     Object? keys = null,
   }) {
-    return _then(_$_ApiKeysListResponse(
+    return _then(_$_GetApiKeysListResponse(
       keys: null == keys
           ? _value._keys
           : keys // ignore: cast_nullable_to_non_nullable
@@ -97,13 +100,13 @@ class __$$_ApiKeysListResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ApiKeysListResponse implements _ApiKeysListResponse {
-  const _$_ApiKeysListResponse(
+class _$_GetApiKeysListResponse implements _GetApiKeysListResponse {
+  const _$_GetApiKeysListResponse(
       {@JsonKey(name: 'data') required final List<ApiKeyResponse> keys})
       : _keys = keys;
 
-  factory _$_ApiKeysListResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_ApiKeysListResponseFromJson(json);
+  factory _$_GetApiKeysListResponse.fromJson(Map<String, dynamic> json) =>
+      _$$_GetApiKeysListResponseFromJson(json);
 
   final List<ApiKeyResponse> _keys;
   @override
@@ -116,14 +119,14 @@ class _$_ApiKeysListResponse implements _ApiKeysListResponse {
 
   @override
   String toString() {
-    return 'ApiKeysListResponse(keys: $keys)';
+    return 'GetApiKeysListResponse(keys: $keys)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ApiKeysListResponse &&
+            other is _$_GetApiKeysListResponse &&
             const DeepCollectionEquality().equals(other._keys, _keys));
   }
 
@@ -135,31 +138,31 @@ class _$_ApiKeysListResponse implements _ApiKeysListResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ApiKeysListResponseCopyWith<_$_ApiKeysListResponse> get copyWith =>
-      __$$_ApiKeysListResponseCopyWithImpl<_$_ApiKeysListResponse>(
+  _$$_GetApiKeysListResponseCopyWith<_$_GetApiKeysListResponse> get copyWith =>
+      __$$_GetApiKeysListResponseCopyWithImpl<_$_GetApiKeysListResponse>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ApiKeysListResponseToJson(
+    return _$$_GetApiKeysListResponseToJson(
       this,
     );
   }
 }
 
-abstract class _ApiKeysListResponse implements ApiKeysListResponse {
-  const factory _ApiKeysListResponse(
+abstract class _GetApiKeysListResponse implements GetApiKeysListResponse {
+  const factory _GetApiKeysListResponse(
           {@JsonKey(name: 'data') required final List<ApiKeyResponse> keys}) =
-      _$_ApiKeysListResponse;
+      _$_GetApiKeysListResponse;
 
-  factory _ApiKeysListResponse.fromJson(Map<String, dynamic> json) =
-      _$_ApiKeysListResponse.fromJson;
+  factory _GetApiKeysListResponse.fromJson(Map<String, dynamic> json) =
+      _$_GetApiKeysListResponse.fromJson;
 
   @override
   @JsonKey(name: 'data')
   List<ApiKeyResponse> get keys;
   @override
   @JsonKey(ignore: true)
-  _$$_ApiKeysListResponseCopyWith<_$_ApiKeysListResponse> get copyWith =>
+  _$$_GetApiKeysListResponseCopyWith<_$_GetApiKeysListResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }

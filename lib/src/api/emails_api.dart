@@ -13,8 +13,8 @@ class EmailsApi {
 
   const EmailsApi(this._apiClient);
 
-  Future<SendEmailResponse> sendEmail(SendEmailBody body) async {
-    final url = Uri.https(_apiClient.baseUrl, ApiPath.sendEmail);
+  Future<SendEmailResponse> send(SendEmailBody body) async {
+    final url = Uri.https(_apiClient.baseUrl, ApiPath.emails);
     final response = await _apiClient.post(
       url,
       body: _apiClient.toJsonString(body.toJson()),
@@ -26,7 +26,7 @@ class EmailsApi {
     return SendEmailResponse.fromJson(json);
   }
 
-  Future<GetEmailResponse> getEmail({required String id}) async {
+  Future<GetEmailResponse> get({required String id}) async {
     final url = Uri.https(
       _apiClient.baseUrl,
       ApiPath.retrieveEmail(id: id),

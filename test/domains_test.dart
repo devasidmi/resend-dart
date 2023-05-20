@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:flutter_test/flutter_test.dart';
 import 'package:resend_dart/resend_dart.dart';
 
 void main() {
@@ -16,6 +15,4 @@ void main() {
   }
 
   final _ = Resend(apiKey: apiKey);
-
-  test('Get domains list', () {});
 }

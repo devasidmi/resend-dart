@@ -23,4 +23,15 @@ class DomainsApi {
     final json = jsonDecode(response.body) as Map<String, Object?>;
     return DomainsListResponse.fromJson(json);
   }
+
+  Future<void> deleteDomain({required String domainId}) async {
+    final url = Uri.https(
+      _apiClient.baseUrl,
+      ApiPath.deleteDomain(id: domainId),
+    );
+    final response = await _apiClient.delete(url);
+    if (response.statusCode != 200) {
+      // TODO(vasidmi): handle error
+    }
+  }
 }
