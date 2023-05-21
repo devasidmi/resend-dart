@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'attachment.dart';
+part of 'resend_attachment.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Attachment _$AttachmentFromJson(Map<String, dynamic> json) {
-  return _Attachment.fromJson(json);
+ResendAttachment _$ResendAttachmentFromJson(Map<String, dynamic> json) {
+  return _ResendAttachment.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Attachment {
+mixin _$ResendAttachment {
   /// Content of an attached file
   List<int> get content => throw _privateConstructorUsedError;
 
@@ -28,23 +28,23 @@ mixin _$Attachment {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AttachmentCopyWith<Attachment> get copyWith =>
+  $ResendAttachmentCopyWith<ResendAttachment> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AttachmentCopyWith<$Res> {
-  factory $AttachmentCopyWith(
-          Attachment value, $Res Function(Attachment) then) =
-      _$AttachmentCopyWithImpl<$Res, Attachment>;
+abstract class $ResendAttachmentCopyWith<$Res> {
+  factory $ResendAttachmentCopyWith(
+          ResendAttachment value, $Res Function(ResendAttachment) then) =
+      _$ResendAttachmentCopyWithImpl<$Res, ResendAttachment>;
   @useResult
   $Res call({List<int> content, String? filename});
 }
 
 /// @nodoc
-class _$AttachmentCopyWithImpl<$Res, $Val extends Attachment>
-    implements $AttachmentCopyWith<$Res> {
-  _$AttachmentCopyWithImpl(this._value, this._then);
+class _$ResendAttachmentCopyWithImpl<$Res, $Val extends ResendAttachment>
+    implements $ResendAttachmentCopyWith<$Res> {
+  _$ResendAttachmentCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -71,22 +71,22 @@ class _$AttachmentCopyWithImpl<$Res, $Val extends Attachment>
 }
 
 /// @nodoc
-abstract class _$$_AttachmentCopyWith<$Res>
-    implements $AttachmentCopyWith<$Res> {
-  factory _$$_AttachmentCopyWith(
-          _$_Attachment value, $Res Function(_$_Attachment) then) =
-      __$$_AttachmentCopyWithImpl<$Res>;
+abstract class _$$_ResendAttachmentCopyWith<$Res>
+    implements $ResendAttachmentCopyWith<$Res> {
+  factory _$$_ResendAttachmentCopyWith(
+          _$_ResendAttachment value, $Res Function(_$_ResendAttachment) then) =
+      __$$_ResendAttachmentCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<int> content, String? filename});
 }
 
 /// @nodoc
-class __$$_AttachmentCopyWithImpl<$Res>
-    extends _$AttachmentCopyWithImpl<$Res, _$_Attachment>
-    implements _$$_AttachmentCopyWith<$Res> {
-  __$$_AttachmentCopyWithImpl(
-      _$_Attachment _value, $Res Function(_$_Attachment) _then)
+class __$$_ResendAttachmentCopyWithImpl<$Res>
+    extends _$ResendAttachmentCopyWithImpl<$Res, _$_ResendAttachment>
+    implements _$$_ResendAttachmentCopyWith<$Res> {
+  __$$_ResendAttachmentCopyWithImpl(
+      _$_ResendAttachment _value, $Res Function(_$_ResendAttachment) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -95,7 +95,7 @@ class __$$_AttachmentCopyWithImpl<$Res>
     Object? content = null,
     Object? filename = freezed,
   }) {
-    return _then(_$_Attachment(
+    return _then(_$_ResendAttachment(
       content: null == content
           ? _value._content
           : content // ignore: cast_nullable_to_non_nullable
@@ -110,12 +110,12 @@ class __$$_AttachmentCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Attachment implements _Attachment {
-  const _$_Attachment({required final List<int> content, this.filename})
+class _$_ResendAttachment implements _ResendAttachment {
+  const _$_ResendAttachment({required final List<int> content, this.filename})
       : _content = content;
 
-  factory _$_Attachment.fromJson(Map<String, dynamic> json) =>
-      _$$_AttachmentFromJson(json);
+  factory _$_ResendAttachment.fromJson(Map<String, dynamic> json) =>
+      _$$_ResendAttachmentFromJson(json);
 
   /// Content of an attached file
   final List<int> _content;
@@ -134,14 +134,14 @@ class _$_Attachment implements _Attachment {
 
   @override
   String toString() {
-    return 'Attachment(content: $content, filename: $filename)';
+    return 'ResendAttachment(content: $content, filename: $filename)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Attachment &&
+            other is _$_ResendAttachment &&
             const DeepCollectionEquality().equals(other._content, _content) &&
             (identical(other.filename, filename) ||
                 other.filename == filename));
@@ -155,24 +155,24 @@ class _$_Attachment implements _Attachment {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AttachmentCopyWith<_$_Attachment> get copyWith =>
-      __$$_AttachmentCopyWithImpl<_$_Attachment>(this, _$identity);
+  _$$_ResendAttachmentCopyWith<_$_ResendAttachment> get copyWith =>
+      __$$_ResendAttachmentCopyWithImpl<_$_ResendAttachment>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AttachmentToJson(
+    return _$$_ResendAttachmentToJson(
       this,
     );
   }
 }
 
-abstract class _Attachment implements Attachment {
-  const factory _Attachment(
+abstract class _ResendAttachment implements ResendAttachment {
+  const factory _ResendAttachment(
       {required final List<int> content,
-      final String? filename}) = _$_Attachment;
+      final String? filename}) = _$_ResendAttachment;
 
-  factory _Attachment.fromJson(Map<String, dynamic> json) =
-      _$_Attachment.fromJson;
+  factory _ResendAttachment.fromJson(Map<String, dynamic> json) =
+      _$_ResendAttachment.fromJson;
 
   @override
 
@@ -184,6 +184,6 @@ abstract class _Attachment implements Attachment {
   String? get filename;
   @override
   @JsonKey(ignore: true)
-  _$$_AttachmentCopyWith<_$_Attachment> get copyWith =>
+  _$$_ResendAttachmentCopyWith<_$_ResendAttachment> get copyWith =>
       throw _privateConstructorUsedError;
 }

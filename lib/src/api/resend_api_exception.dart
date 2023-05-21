@@ -19,4 +19,7 @@ class ResendApiException implements Exception {
       statusCode,
     );
   }
+
+  @override
+  String toString() => message;
 }

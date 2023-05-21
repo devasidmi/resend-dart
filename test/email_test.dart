@@ -3,7 +3,6 @@ import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:resend_dart/resend_dart.dart';
-import 'package:resend_dart/src/email/models/attachment.dart';
 
 void main() {
   final credentials = File('test/credentials.json').readAsStringSync();
@@ -62,7 +61,7 @@ void main() {
             () async {
               final testFile = File('test/test_file.txt');
               final content = await testFile.readAsBytes();
-              final testAttachment = Attachment(
+              final testAttachment = ResendAttachment(
                 content: content,
                 filename: testFile.path,
               );
@@ -86,7 +85,7 @@ void main() {
               final testImage = File('test/resend_logo.jpeg');
               final attachments = [testFile, testImage]
                   .map(
-                    (f) => Attachment(
+                    (f) => ResendAttachment(
                       content: f.readAsBytesSync(),
                       filename: f.path,
                     ),

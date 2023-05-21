@@ -2,9 +2,9 @@ import 'package:meta/meta.dart';
 import 'package:resend_dart/src/api/api_client.dart';
 import 'package:resend_dart/src/api/models/responses/create_email_response.dart';
 import 'package:resend_dart/src/api/models/responses/get_email_response.dart';
-import 'package:resend_dart/src/email/models/attachment.dart';
 import 'package:resend_dart/src/email/models/send_email_body.dart';
 import 'package:resend_dart/src/email/models/tag.dart';
+import 'package:resend_dart/src/models/resend_attachment.dart';
 
 @internal
 class Email {
@@ -39,7 +39,7 @@ class Email {
     String? text,
 
     /// Filename and content of attachments (max 40mb per email)
-    List<Attachment>? attachments,
+    List<ResendAttachment>? attachments,
 
     /// Email tags
     List<Tag>? tags,

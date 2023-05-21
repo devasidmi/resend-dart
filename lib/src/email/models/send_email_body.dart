@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:resend_dart/src/email/models/attachment.dart';
 import 'package:resend_dart/src/email/models/tag.dart';
+import 'package:resend_dart/src/models/resend_attachment.dart';
 
 part 'send_email_body.freezed.dart';
 part 'send_email_body.g.dart';
@@ -35,7 +35,7 @@ class SendEmailBody with _$SendEmailBody {
     String? text,
 
     /// Filename and content of attachments (max 40mb per email)
-    List<Attachment>? attachments,
+    List<ResendAttachment>? attachments,
 
     /// Email tags
     List<Tag>? tags,

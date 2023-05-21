@@ -46,7 +46,7 @@ mixin _$SendEmailBody {
   String? get text => throw _privateConstructorUsedError;
 
   /// Filename and content of attachments (max 40mb per email)
-  List<Attachment>? get attachments => throw _privateConstructorUsedError;
+  List<ResendAttachment>? get attachments => throw _privateConstructorUsedError;
 
   /// Email tags
   List<Tag>? get tags => throw _privateConstructorUsedError;
@@ -72,7 +72,7 @@ abstract class $SendEmailBodyCopyWith<$Res> {
       String? replyTo,
       String? html,
       String? text,
-      List<Attachment>? attachments,
+      List<ResendAttachment>? attachments,
       List<Tag>? tags});
 }
 
@@ -136,7 +136,7 @@ class _$SendEmailBodyCopyWithImpl<$Res, $Val extends SendEmailBody>
       attachments: freezed == attachments
           ? _value.attachments
           : attachments // ignore: cast_nullable_to_non_nullable
-              as List<Attachment>?,
+              as List<ResendAttachment>?,
       tags: freezed == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
@@ -162,7 +162,7 @@ abstract class _$$_SendEmailBodyCopyWith<$Res>
       String? replyTo,
       String? html,
       String? text,
-      List<Attachment>? attachments,
+      List<ResendAttachment>? attachments,
       List<Tag>? tags});
 }
 
@@ -224,7 +224,7 @@ class __$$_SendEmailBodyCopyWithImpl<$Res>
       attachments: freezed == attachments
           ? _value._attachments
           : attachments // ignore: cast_nullable_to_non_nullable
-              as List<Attachment>?,
+              as List<ResendAttachment>?,
       tags: freezed == tags
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
@@ -245,7 +245,7 @@ class _$_SendEmailBody implements _SendEmailBody {
       this.replyTo,
       this.html,
       this.text,
-      final List<Attachment>? attachments,
+      final List<ResendAttachment>? attachments,
       final List<Tag>? tags})
       : _to = to,
         _bcc = bcc,
@@ -315,11 +315,11 @@ class _$_SendEmailBody implements _SendEmailBody {
   final String? text;
 
   /// Filename and content of attachments (max 40mb per email)
-  final List<Attachment>? _attachments;
+  final List<ResendAttachment>? _attachments;
 
   /// Filename and content of attachments (max 40mb per email)
   @override
-  List<Attachment>? get attachments {
+  List<ResendAttachment>? get attachments {
     final value = _attachments;
     if (value == null) return null;
     if (_attachments is EqualUnmodifiableListView) return _attachments;
@@ -402,7 +402,7 @@ abstract class _SendEmailBody implements SendEmailBody {
       final String? replyTo,
       final String? html,
       final String? text,
-      final List<Attachment>? attachments,
+      final List<ResendAttachment>? attachments,
       final List<Tag>? tags}) = _$_SendEmailBody;
 
   factory _SendEmailBody.fromJson(Map<String, dynamic> json) =
@@ -444,7 +444,7 @@ abstract class _SendEmailBody implements SendEmailBody {
   @override
 
   /// Filename and content of attachments (max 40mb per email)
-  List<Attachment>? get attachments;
+  List<ResendAttachment>? get attachments;
   @override
 
   /// Email tags

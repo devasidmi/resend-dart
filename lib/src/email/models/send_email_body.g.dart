@@ -16,7 +16,8 @@ _$_SendEmailBody _$$_SendEmailBodyFromJson(Map json) => _$_SendEmailBody(
       html: json['html'] as String?,
       text: json['text'] as String?,
       attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => Attachment.fromJson(Map<String, Object?>.from(e as Map)))
+          ?.map((e) =>
+              ResendAttachment.fromJson(Map<String, Object?>.from(e as Map)))
           .toList(),
       tags: (json['tags'] as List<dynamic>?)
           ?.map((e) => Tag.fromJson(Map<String, Object?>.from(e as Map)))

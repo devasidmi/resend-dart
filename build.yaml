@@ -4,6 +4,8 @@ targets:
       json_serializable:
         options:
           any_map: true
+        generate_for:
+          - lib/src/**/*.dart
       freezed:
         options:
           json_serializable: true
