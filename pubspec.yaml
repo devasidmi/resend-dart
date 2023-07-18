@@ -1,16 +1,13 @@
 name: resend_dart
 description: Dart SDK for the Resend API - best API to reach humans instead of spam folders
-version: 1.0.0
+version: 1.0.1
 homepage: "https://resend.com"
 repository: "https://github.com/devasidmi/resend-dart"
 
 environment:
   sdk: ">=2.17.0 <4.0.0"
-  flutter: ">=3.0.0"
 
 dependencies:
-  flutter:
-    sdk: flutter
   freezed_annotation: ^2.4.1
   http: ^1.1.0
   json_annotation: ^4.8.1
@@ -24,5 +21,3 @@ dev_dependencies:
   json_serializable: ^6.7.1
   build_runner: ^2.4.6
   very_good_analysis: ^5.0.0+1
-
-flutter:
