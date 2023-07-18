@@ -3,6 +3,18 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ---
 
+## Platform Support
+
+| Android | iOS | MacOS | Web | Linux | Windows |
+| :-----: | :-: | :---: | :-: | :---: | :-----: |
+|   ✅    | ✅  |  ✅   | ✅  |  ✅   |   ✅    |
+
+## API Support
+
+| Api keys | Domains | Email |
+| :-----: | :-: | :---: |
+|   ✅    | ✅  |  ✅   |
+
 ## Installation
 
 To install Resend Dart SDK, simply execute the following command in a terminal:

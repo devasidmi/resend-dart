@@ -7,6 +7,7 @@ import 'package:resend_dart/src/api/models/responses/create_api_key_response.dar
 import 'package:resend_dart/src/api/models/responses/get_api_keys_list_response.dart';
 import 'package:resend_dart/src/api/resend_api_exception.dart';
 import 'package:resend_dart/src/api_keys/models/create_api_key_body.dart';
+import 'package:resend_dart/src/extensions/status_code_extension.dart';
 
 @internal
 class ApiKeysApi {
@@ -23,12 +24,12 @@ class ApiKeysApi {
       url,
       body: _apiClient.toJsonString(body.toJson()),
     );
-    if (response.statusCode != 200) {
-      final errorJson = jsonDecode(response.body) as Map<String, Object?>;
-      throw ResendApiException.fromJson(errorJson);
+    if (response.statusCode.success) {
+      final json = jsonDecode(response.body) as Map<String, Object?>;
+      return CreateApiKeyResponse.fromJson(json);
     }
-    final json = jsonDecode(response.body) as Map<String, Object?>;
-    return CreateApiKeyResponse.fromJson(json);
+    final errorJson = jsonDecode(response.body) as Map<String, Object?>;
+    throw ResendApiException.fromJson(errorJson);
   }
 
   Future<GetApiKeysListResponse> getApiKeys() async {
@@ -37,12 +38,13 @@ class ApiKeysApi {
       ApiPath.apiKeys,
     );
     final response = await _apiClient.get(url);
-    if (response.statusCode != 200) {
-      final errorJson = jsonDecode(response.body) as Map<String, Object?>;
-      throw ResendApiException.fromJson(errorJson);
+    if (response.statusCode.success) {
+      final json = jsonDecode(response.body) as Map<String, Object?>;
+      return GetApiKeysListResponse.fromJson(json);
     }
-    final json = jsonDecode(response.body) as Map<String, Object?>;
-    return GetApiKeysListResponse.fromJson(json);
+
+    final errorJson = jsonDecode(response.body) as Map<String, Object?>;
+    throw ResendApiException.fromJson(errorJson);
   }
 
   Future<void> deleteApiKey({required String apiKeyId}) async {
@@ -51,9 +53,10 @@ class ApiKeysApi {
       ApiPath.deleteApiKey(id: apiKeyId),
     );
     final response = await _apiClient.delete(url);
-    if (response.statusCode != 200) {
-      final errorJson = jsonDecode(response.body) as Map<String, Object?>;
-      throw ResendApiException.fromJson(errorJson);
+    if (response.statusCode.success) {
+      return;
     }
+    final errorJson = jsonDecode(response.body) as Map<String, Object?>;
+    throw ResendApiException.fromJson(errorJson);
   }
 }

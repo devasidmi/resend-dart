@@ -7,6 +7,7 @@ import 'package:resend_dart/src/api/models/responses/create_email_response.dart'
 import 'package:resend_dart/src/api/models/responses/get_email_response.dart';
 import 'package:resend_dart/src/api/resend_api_exception.dart';
 import 'package:resend_dart/src/email/models/send_email_body.dart';
+import 'package:resend_dart/src/extensions/status_code_extension.dart';
 
 @internal
 class EmailsApi {
@@ -20,12 +21,12 @@ class EmailsApi {
       url,
       body: _apiClient.toJsonString(body.toJson()),
     );
-    if (response.statusCode != 200) {
-      final errorJson = jsonDecode(response.body) as Map<String, Object?>;
-      throw ResendApiException.fromJson(errorJson);
+    if (response.statusCode.success) {
+      final json = jsonDecode(response.body) as Map<String, Object?>;
+      return CreateEmailResponse.fromJson(json);
     }
-    final json = jsonDecode(response.body) as Map<String, Object?>;
-    return CreateEmailResponse.fromJson(json);
+    final errorJson = jsonDecode(response.body) as Map<String, Object?>;
+    throw ResendApiException.fromJson(errorJson);
   }
 
   Future<GetEmailResponse> get({required String id}) async {
@@ -34,11 +35,11 @@ class EmailsApi {
       ApiPath.retrieveEmail(id: id),
     );
     final response = await _apiClient.get(url);
-    if (response.statusCode != 200) {
-      final errorJson = jsonDecode(response.body) as Map<String, Object?>;
-      throw ResendApiException.fromJson(errorJson);
+    if (response.statusCode.success) {
+      final json = jsonDecode(response.body) as Map<String, Object?>;
+      return GetEmailResponse.fromJson(json);
     }
-    final json = jsonDecode(response.body) as Map<String, Object?>;
-    return GetEmailResponse.fromJson(json);
+    final errorJson = jsonDecode(response.body) as Map<String, Object?>;
+    throw ResendApiException.fromJson(errorJson);
   }
 }

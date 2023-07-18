@@ -8,6 +8,7 @@ import 'package:resend_dart/src/api/models/responses/get_domain_response.dart';
 import 'package:resend_dart/src/api/models/responses/get_domains_list_response.dart';
 import 'package:resend_dart/src/api/resend_api_exception.dart';
 import 'package:resend_dart/src/domains/models/domain_body.dart';
+import 'package:resend_dart/src/extensions/status_code_extension.dart';
 
 @internal
 class DomainsApi {
@@ -24,12 +25,12 @@ class DomainsApi {
       url,
       body: _apiClient.toJsonString(body.toJson()),
     );
-    if (response.statusCode != 200) {
-      final errorJson = jsonDecode(response.body) as Map<String, Object?>;
-      throw ResendApiException.fromJson(errorJson);
+    if (response.statusCode.success) {
+      final json = jsonDecode(response.body) as Map<String, Object?>;
+      return CreateDomainResponse.fromJson(json);
     }
-    final json = jsonDecode(response.body) as Map<String, Object?>;
-    return CreateDomainResponse.fromJson(json);
+    final errorJson = jsonDecode(response.body) as Map<String, Object?>;
+    throw ResendApiException.fromJson(errorJson);
   }
 
   Future<GetDomainResponse> getSingleDomain({required String domainId}) async {
@@ -38,12 +39,12 @@ class DomainsApi {
       ApiPath.getDomain(id: domainId),
     );
     final response = await _apiClient.get(url);
-    if (response.statusCode != 200) {
-      final errorJson = jsonDecode(response.body) as Map<String, Object?>;
-      throw ResendApiException.fromJson(errorJson);
+    if (response.statusCode.success) {
+      final json = jsonDecode(response.body) as Map<String, Object?>;
+      return GetDomainResponse.fromJson(json);
     }
-    final json = jsonDecode(response.body) as Map<String, Object?>;
-    return GetDomainResponse.fromJson(json);
+    final errorJson = jsonDecode(response.body) as Map<String, Object?>;
+    throw ResendApiException.fromJson(errorJson);
   }
 
   Future<GetDomainsListResponse> getDomainsList() async {
@@ -52,12 +53,12 @@ class DomainsApi {
       ApiPath.domains,
     );
     final response = await _apiClient.get(url);
-    if (response.statusCode != 200) {
-      final errorJson = jsonDecode(response.body) as Map<String, Object?>;
-      throw ResendApiException.fromJson(errorJson);
+    if (response.statusCode.success) {
+      final json = jsonDecode(response.body) as Map<String, Object?>;
+      return GetDomainsListResponse.fromJson(json);
     }
-    final json = jsonDecode(response.body) as Map<String, Object?>;
-    return GetDomainsListResponse.fromJson(json);
+    final errorJson = jsonDecode(response.body) as Map<String, Object?>;
+    throw ResendApiException.fromJson(errorJson);
   }
 
   Future<void> verifyDomain({required String domainId}) async {
@@ -66,10 +67,11 @@ class DomainsApi {
       ApiPath.verifyDomain(id: domainId),
     );
     final response = await _apiClient.post(url);
-    if (response.statusCode != 200) {
-      final errorJson = jsonDecode(response.body) as Map<String, Object?>;
-      throw ResendApiException.fromJson(errorJson);
+    if (response.statusCode.success) {
+      return;
     }
+    final errorJson = jsonDecode(response.body) as Map<String, Object?>;
+    throw ResendApiException.fromJson(errorJson);
   }
 
   Future<void> deleteDomain({required String domainId}) async {
@@ -78,9 +80,10 @@ class DomainsApi {
       ApiPath.deleteDomain(id: domainId),
     );
     final response = await _apiClient.delete(url);
-    if (response.statusCode != 200) {
-      final errorJson = jsonDecode(response.body) as Map<String, Object?>;
-      throw ResendApiException.fromJson(errorJson);
+    if (response.statusCode.success) {
+      return;
     }
+    final errorJson = jsonDecode(response.body) as Map<String, Object?>;
+    throw ResendApiException.fromJson(errorJson);
   }
 }
